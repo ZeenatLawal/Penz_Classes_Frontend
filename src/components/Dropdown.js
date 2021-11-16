@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Form } from 'react-bootstrap';
 import { loadCourses } from '../redux/courses/Courses';
 
-const Drop = () => {
+const Drop = ({ onChange }) => {
   const courses = useSelector((state) => state.coursesReducer.courses);
 
   const dispatch = useDispatch();
@@ -13,10 +14,10 @@ const Drop = () => {
   }, [dispatch]);
 
   return (
-    <Form.Select aria-label="Default select example">
+    <Form.Select aria-label="Select a Course" onChange={(e) => onChange(e.target.value)}>
       <option>Select a Course</option>
       {courses && courses.map((course) => (
-        <option value={course.title} key={course.id}>
+        <option value={course.id} key={course.id}>
           {' '}
           {course.title}
           {' '}
