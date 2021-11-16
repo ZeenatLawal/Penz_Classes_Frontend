@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import NavbarFooter from './NavbarFooter';
 
 const Navbar = () => (
   <div>
@@ -13,16 +14,7 @@ const Navbar = () => (
         <li><NavLink to="/delete-courses">Delete Courses</NavLink></li>
       </ul>
     </nav>
-    <div>
-      <ul>
-        <li>twitter</li>
-        <li>facebook</li>
-        <li>google</li>
-        <li>PENZ</li>
-        <li>pinterest</li>
-        <p>© 2021 PENZ-Classes </p>
-      </ul>
-    </div>
+    <NavbarFooter />
   </div>
 );
 
