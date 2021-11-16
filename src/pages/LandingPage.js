@@ -16,8 +16,8 @@ const LandingPage = () => {
         from software development, data science and so much more
       </p>
       <div>
-        <button type="button" onClick={() => handleRoutes('/login')}>Login</button>
-        <button type="button" onClick={() => handleRoutes('/signup')}>SignUp</button>
+        <button type="button" onClick={() => handleRoutes('/login')}>Log In</button>
+        <button type="button" onClick={() => handleRoutes('/signup')}>Sign Up</button>
       </div>
     </div>
   );
