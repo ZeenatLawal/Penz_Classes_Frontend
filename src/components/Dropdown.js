@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Dropdown } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import { loadCourses } from '../redux/courses/Courses';
 
 const Drop = () => {
@@ -13,25 +13,20 @@ const Drop = () => {
   }, [dispatch]);
 
   return (
-    <Dropdown>
-      <Dropdown.Toggle>
-        Select Course
-      </Dropdown.Toggle>
-
-      <Dropdown.Menu>
-        {courses && courses.map((course) => (
-          <Dropdown.Item eventKey={course.title} key={course.id}>
-            {' '}
-            {course.title}
-            {' '}
-            by
-            {' '}
-            {course.instructor}
-            {' '}
-          </Dropdown.Item>
-        ))}
-      </Dropdown.Menu>
-    </Dropdown>
+    <Form.Select aria-label="Default select example">
+      <option>Select a Course</option>
+      {courses && courses.map((course) => (
+        <option value={course.title} key={course.id}>
+          {' '}
+          {course.title}
+          {' '}
+          by
+          {' '}
+          {course.instructor}
+          {' '}
+        </option>
+      ))}
+    </Form.Select>
   );
 };
 
