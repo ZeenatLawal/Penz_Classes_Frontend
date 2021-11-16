@@ -1,4 +1,4 @@
-import getCourses from '../../Api';
+import { getCourses } from '../../Api';
 
 const GET_COURSES = 'penz_classes_frontend/courses/GET_COURSES';
 
