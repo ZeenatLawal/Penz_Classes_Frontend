@@ -21,3 +21,18 @@ export const RegisterAuthAction = (userState) => async (dispatch) => {
     }
   }
 };
+
+export const LoginAuthAction = (loginState) => async (dispatch) => {
+  try {
+    const res = await axios.post('http://localhost:3000/api/v1/login', loginState);
+    const { data } = res;
+    dispatch({ type: ActionType.LOGIN_SUCCESS, payload: data });
+  } catch (error) {
+    if (error.response) {
+      dispatch({
+        type: ActionType.LOGIN_FAIL,
+        payload: error.response.data.error,
+      });
+    }
+  }
+};
