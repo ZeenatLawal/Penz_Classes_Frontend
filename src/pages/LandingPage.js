@@ -12,12 +12,12 @@ const LandingPage = () => {
     <div>
       <h1>Welcome to PENZ Classes</h1>
       <p>
-        We teach different kinds of programming courses ranging
-        from software development, data science and so much more
+        We are an online school that provides a
+        wide range of programming courses, such as software development, data science, and more.
       </p>
+      <p>Learn, Explore, and Develop your abilities</p>
       <div>
         <button type="button" onClick={() => handleRoutes('/login')}>Log In</button>
-        <button type="button" onClick={() => handleRoutes('/signup')}>Sign Up</button>
       </div>
     </div>
   );
