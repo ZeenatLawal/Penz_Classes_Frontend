@@ -1,5 +1,7 @@
-import React, { useSelector } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { LoginAuthAction } from '../redux/users/actions/AuthAction';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -7,11 +9,30 @@ const Login = () => {
   const handleRoutes = (path) => {
     navigate(path);
   };
+
+  const userLoginInfo = useSelector((state) => state.authReducer);
+  const [loggedUserName, setLoggedUserName] = useState();
+  const dispatch = useDispatch();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(LoginAuthAction(loggedUserName));
+    e.target.reset();
+  };
+
   return (
-    <form>
+    <form onSubmit={(e) => handleSubmit(e)}>
       <h2>Log In</h2>
-      <input type="text" placeholder="Enter username" />
-      <button type="button" className="btn btn-secondary mx-3 my-4">Log In</button>
+      <input
+        type="text"
+        placeholder="Enter username"
+        onChange={(event) => {
+          const username = event.target.value;
+          setLoggedUserName({ ...loggedUserName, ...{ username } });
+        }}
+      />
+      <button type="submit" className="btn btn-secondary mx-3 my-4">Log In</button>
+      <p>{userLoginInfo.message}</p>
       <div>
         <span>New to Penz Classes?</span>
         <span>

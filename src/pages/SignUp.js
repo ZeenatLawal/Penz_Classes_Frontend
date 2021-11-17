@@ -12,6 +12,7 @@ const SignUp = () => {
     dispatch(RegisterAuthAction(enteredUserName));
     e.target.reset();
   };
+
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
       <h2>Sign Up</h2>
