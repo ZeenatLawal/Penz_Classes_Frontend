@@ -7,7 +7,7 @@ const getCourses = async () => {
 };
 
 const reserveCourse = async (course) => {
-  const result = await fetch('http://localhost:3000/api/v1/reservations', {
+  const request = await fetch('http://localhost:3000/api/v1/reservations', {
     method: 'POST',
     credentials: 'same-origin',
     headers: {
@@ -20,7 +20,14 @@ const reserveCourse = async (course) => {
     }),
   });
 
-  return result.status === 201;
+  const result = await request.json();
+  let message = '';
+  if (request.status === 201) {
+    message = result.success;
+  } else {
+    message = result.error;
+  }
+  return message;
 };
 
 export { getCourses, reserveCourse };

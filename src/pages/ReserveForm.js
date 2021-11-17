@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Form } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 import Drop from '../components/Dropdown';
 import { reserve } from '../redux/reservations/Reservations';
 
 const ReserveForm = () => {
   const dispatch = useDispatch();
-  const [date, setDate] = useState('');
+  const [date, setDate] = useState();
   const [courseId, setCourse] = useState(0);
+  const [validated, setValidated] = useState(false);
 
   const onDateChange = (e) => setDate((e.target.value));
   const onCourseChange = (value) => setCourse(value);
@@ -20,18 +21,25 @@ const ReserveForm = () => {
       courseId,
     };
     dispatch(reserve(course));
-    e.preventDefault();
-    setDate('');
-    setCourse('');
+    const form = e.currentTarget;
+    if (form.checkValidity() === false) {
+      e.stopPropagation();
+      e.preventDefault();
+    }
+    setValidated(true);
+    setDate();
+    setCourse(0);
   };
 
   return (
     <div>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit} noValidate validated={validated}>
         <h2>Reserve a spot in one of our courses</h2>
-        <input type="date" onChange={onDateChange} />
+        <Form.Label>Select a start date for your course</Form.Label>
+        <Form.Control type="date" onChange={onDateChange} required />
+        <Form.Label>Select a course</Form.Label>
         <Drop onChange={onCourseChange} />
-        <button type="submit">Reserve</button>
+        <Button type="submit">Reserve</Button>
       </Form>
     </div>
   );

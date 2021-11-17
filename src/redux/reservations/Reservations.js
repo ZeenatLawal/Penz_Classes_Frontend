@@ -10,7 +10,7 @@ export const reserve = (course) => async (dispatch) => {
   if (created) {
     dispatch({
       type: RESERVE_COURSE,
-      payload: course,
+      payload: created,
     });
   }
 };
@@ -20,7 +20,7 @@ const reservationsReducer = (state = initialState, action) => {
     case RESERVE_COURSE:
       return {
         ...state,
-        reservations: action.payload,
+        reserveMsg: action.payload,
       };
     default:
       return state;
