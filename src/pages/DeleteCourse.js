@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import Table from 'react-bootstrap/Table';
+import Container from 'react-bootstrap/Container';
 import { loadCourses } from '../redux/courses/Courses';
+import DeleteButton from '../components/DeleteButton';
 
 const DeleteCourse = () => {
   const courses = useSelector((state) => state.coursesReducer.courses);
@@ -12,19 +15,25 @@ const DeleteCourse = () => {
   }, [dispatch]);
 
   return (
-    <div>
-      {courses && courses.map((course) => (
-        <p value={course.id} key={course.id}>
-          {' '}
-          {course.title}
-          {' '}
-          by
-          {' '}
-          {course.instructor}
-          {' '}
-        </p>
-      ))}
-    </div>
+    <Container>
+      <Table striped bordered>
+        <thead>
+          <tr>
+            <th>Course Title</th>
+            <th>Course Instructor</th>
+            <th> </th>
+          </tr>
+        </thead>
+        <tbody>
+          {courses && courses.map((course) => (
+            <DeleteButton
+              key={course.id}
+              course={course}
+            />
+          ))}
+        </tbody>
+      </Table>
+    </Container>
   );
 };
 
