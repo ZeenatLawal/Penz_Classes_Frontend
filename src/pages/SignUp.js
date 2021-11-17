@@ -23,6 +23,7 @@ const SignUp = () => {
         }}
       />
       <button type="submit">Sign Up</button>
+
     </form>
   );
 };
