@@ -17,7 +17,7 @@ const LandingPage = () => {
       </p>
       <p>Learn, Explore, and Develop your abilities!</p>
       <div>
-        <button type="button" onClick={() => handleRoutes('/login')}>Log In</button>
+        <button type="button" className="btn btn-lg btn-secondary" onClick={() => handleRoutes('/login')}>Start Learning Now</button>
       </div>
     </div>
   );

@@ -10,12 +10,12 @@ const Login = () => {
   return (
     <form>
       <h2>Log In</h2>
-      <input type="text" placeholder="Please enter your username" />
-      <button type="button">Log In</button>
+      <input type="text" placeholder="Enter username" />
+      <button type="button" className="btn btn-secondary mx-3 my-4">Log In</button>
       <div>
         <span>New to Penz Classes?</span>
         <span>
-          <button type="button" onClick={() => handleRoutes('/signup')}>
+          <button type="button" className="border-0 text-primary bg-body mx-2" onClick={() => handleRoutes('/signup')}>
             Sign Up
           </button>
         </span>

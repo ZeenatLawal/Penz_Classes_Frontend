@@ -7,7 +7,12 @@ const RegisterAuthAction = (userState) => async (dispatch) => {
     const { data } = res;
     dispatch({ type: ActionTypes.REGISTER_SUCCESS, payload: data });
   } catch (error) {
-    dispatch({ type: ActionTypes.REGISTER_FAIL, payload: {} });
+    if (error.response) {
+      dispatch({
+        type: ActionTypes.REGISTER_FAIL,
+        payload: error.response.data.error,
+      });
+    }
   }
 };
 

@@ -1,29 +1,30 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import RegisterAuthAction from '../redux/users/actions/RegisterAuthAction';
 
 const SignUp = () => {
-  const [userState, setUserState] = useState({});
+  const userInfo = useSelector((state) => state.authReducer);
+  const [enteredUserName, setEnteredUserName] = useState();
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(RegisterAuthAction(userState));
+    dispatch(RegisterAuthAction(enteredUserName));
+    e.target.reset();
   };
-
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
       <h2>Sign Up</h2>
       <input
         type="text"
-        placeholder="Please enter your username"
+        placeholder="Enter username"
         onChange={(event) => {
           const username = event.target.value;
-          setUserState({ ...userState, ...{ username } });
+          setEnteredUserName({ ...enteredUserName, ...{ username } });
         }}
       />
       <button type="submit">Sign Up</button>
-
+      <p className="border border-secondary w-25 text-center mt-3">{userInfo.message}</p>
     </form>
   );
 };

@@ -1,11 +1,19 @@
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
-import rootReducer from './users/reducers/rootReducer';
+import thunk from 'redux-thunk';
+import coursesReducer from './courses/Courses';
+import reservationsReducer from './reservations/Reservations';
+import authReducer from './users/reducers/AuthReducer';
 
-const configureStore = () => createStore(
-  rootReducer,
+const reducer = combineReducers({
+  coursesReducer,
+  reservationsReducer,
+  authReducer,
+});
+
+const store = createStore(
+  reducer,
   applyMiddleware(logger, thunk),
 );
 
-export default configureStore;
+export default store;

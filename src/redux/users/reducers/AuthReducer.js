@@ -1,22 +1,18 @@
-/* eslint-disable no-case-declarations */
-import axios from 'axios';
 import ActionTypes from '../actions/actionTypes';
 
-const initialState = {
-  isSignedUp: false,
-  user: '',
-};
-
-const authReducer = (state = initialState, action) => {
+const authReducer = (state = {}, action) => {
   switch (action.type) {
     case ActionTypes.REGISTER_SUCCESS:
-      const newAuthState = {
+      return {
         isSignedUp: true,
         user: action.payload,
+        message: 'User was created successfully',
       };
-      axios.defaults.headers.common.Authorization = `Bearer ${action.payload.token}`;
-      localStorage.setItem('auth', JSON.stringify(newAuthState));
-      return newAuthState;
+    case ActionTypes.REGISTER_FAIL:
+      return {
+        isSignedUp: false,
+        message: action.payload,
+      };
     default:
       return state;
   }
