@@ -1,4 +1,4 @@
-import { REGISTER_FAIL, REGISTER_SUCCESS } from '../actions/actionTypes';
+import ActionTypes from '../actions/actionTypes';
 
 const initialState = {
   message: '',
@@ -8,13 +8,13 @@ const initialState = {
 
 const authReducer = (state = initialState, action) => {
   switch (action.type) {
-    case REGISTER_SUCCESS:
+    case ActionTypes.REGISTER_SUCCESS:
       return {
         message: 'User created successfully',
         status: 'success',
         user: action.payload,
       };
-    case REGISTER_FAIL:
+    case ActionTypes.REGISTER_FAIL:
       return {
         message: 'Failed to create user',
         status: 'failed',
