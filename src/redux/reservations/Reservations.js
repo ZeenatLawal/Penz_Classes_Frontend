@@ -1,34 +1,27 @@
-import { reserveCourse } from '../../Api';
+import { reserveCourse, fetchReserveCourses } from '../../Api';
 
-const RESERVE_COURSE = 'penz_classes_frontend/courses/RESERVE_COURSE';
-const FETCH_COURSES_STARTED = 'penz_classes_frontend/courses/FETCH_COURSE_STARTED';
 const FETCH_COURSES_SUCCEED = 'penz_classes_frontend/courses/FETCH_COURSE_SUCCEED';
-const FETCH_COURSES_FAILED = 'penz_classes_frontend/courses/FETCH_COURSE_FAILED';
+const RESERVE_COURSE = 'penz_classes_frontend/courses/RESERVE_COURSE';
 
-const initialState = {
-  status: 'awaiting',
-  message: '',
-};
+const initialState = [];
 
-const fetchCoursesStarted = () => ({
-  type: FETCH_COURSES_STARTED,
-});
-export const fetchCoursesSucceed = (payload) => ({
-  type: FETCH_COURSES_SUCCEED,
-  payload,
-});
-const fetchCoursesFailed = (payload) => ({
-  type: FETCH_COURSES_FAILED,
-  payload,
-});
+export const fetchCoursesSucceed = () => async (dispatch) => {
+  const fetched = await fetchReserveCourses();
+  const reservations = fetched.map((reservation) => ({
+    id: reservation.id,
+    user_id: reservation.user_id,
+    username: reservation.username,
+    course_id: reservation.course_id,
+    course: reservation.course,
+    start_date: reservation.start_date,
+  }));
 
-export const fetchReserveCourses = () => async (dispatch) => {
-  const url = 'http://localhost:3000/v1/reservations';
-  dispatch(fetchCoursesStarted());
-  await fetch(url)
-    .then((response) => response.json())
-    .then((json) => dispatch(fetchCoursesSucceed(json)))
-    .catch((error) => dispatch(fetchCoursesFailed(error.toString())));
+  if (reservations) {
+    dispatch({
+      type: FETCH_COURSES_SUCCEED,
+      payload: reservations,
+    });
+  }
 };
 
 export const reserve = (course) => async (dispatch) => {
@@ -44,26 +37,15 @@ export const reserve = (course) => async (dispatch) => {
 
 const reservationsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_COURSES_STARTED:
-      return {
-        ...state,
-        status: 'loading',
-      };
-    case FETCH_COURSES_SUCCEED:
-      return {
-        message: action.payload.messsage,
-        status: 'awaiting',
-      };
-    case FETCH_COURSES_FAILED:
-      return {
-        ...state,
-        status: 'failed',
-        error: action.payload,
-      };
     case RESERVE_COURSE:
       return {
         ...state,
         reserveMsg: action.payload,
+      };
+    case FETCH_COURSES_SUCCEED:
+      return {
+        ...state,
+        reservations: action.payload,
       };
     default:
       return state;
