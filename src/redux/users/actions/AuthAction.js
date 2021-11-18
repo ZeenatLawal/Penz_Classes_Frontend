@@ -33,7 +33,7 @@ export const LoginAuthAction = (loginState) => async (dispatch) => {
     if (error.response) {
       dispatch({
         type: ActionType.LOGIN_FAIL,
-        payload: error.response.data.message,
+        payload: error.response.data.error,
       });
     }
   }
