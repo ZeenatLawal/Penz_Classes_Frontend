@@ -35,6 +35,18 @@ const reserveCourse = async (course) => {
   }
   return message;
 };
-export { getCourses, reserveCourse, fetchReserveCourses };
 
+const deleteCourse = async (courseId) => {
+  const request = await fetch(`${url}/${courseId}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
 
+  const result = await request.json();
+  return result;
+};
+export {
+  getCourses, reserveCourse, fetchReserveCourses, deleteCourse,
+};
