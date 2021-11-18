@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Form } from 'react-bootstrap';
+import Form from 'react-bootstrap/Form';
 import { loadCourses } from '../redux/courses/Courses';
 
 const Drop = ({ onChange }) => {

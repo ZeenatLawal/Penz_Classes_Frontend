@@ -35,5 +35,6 @@ const reserveCourse = async (course) => {
   }
   return message;
 };
-
 export { getCourses, reserveCourse, fetchReserveCourses };
+
+
