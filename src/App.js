@@ -5,6 +5,7 @@ import LandingPage from './pages/LandingPage';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import ReserveForm from './pages/ReserveForm';
+import DeleteCourse from './pages/DeleteCourse';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/reserve" element={<ReserveForm />} />
+        <Route path="/delete-courses" element={<DeleteCourse />} />
       </Routes>
     </Router>
   );
