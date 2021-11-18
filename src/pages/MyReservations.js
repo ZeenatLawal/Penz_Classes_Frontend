@@ -1,15 +1,32 @@
 import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchCoursesSucceed } from '../redux/reservations/Reservations';
 
 const MyReservations = () => {
   const dispatch = useDispatch();
-  const reservations = useSelector((state) => state.reservation.reservations);
+  const reservations = useSelector((state) => state.reservationsReducer.reservations);
+
   useEffect(() => {
-    dispatch(fetchReservation());
+    dispatch(fetchCoursesSucceed());
   }, [dispatch]);
+
   return (
     <div>
-      <h1>Reservations</h1>
+      {reservations && reservations.map((reservation) => (
+        <p key={reservation.id}>
+          {' '}
+          {reservation.username}
+          {' '}
+          {reservation.course}
+          {' '}
+          {reservation.course_id}
+          {' '}
+          start by
+          {' '}
+          {reservation.start_date}
+          {' '}
+        </p>
+      ))}
     </div>
   );
 };
