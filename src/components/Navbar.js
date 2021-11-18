@@ -9,7 +9,7 @@ const Navbar = () => (
       <ul>
         <li><NavLink to="/courses">Courses</NavLink></li>
         <li><NavLink to="/reserve">Reserve Form</NavLink></li>
-        <li><NavLink to="/reservations">My Reservations</NavLink></li>
+        <li><NavLink to="/myreservations">My Reservations</NavLink></li>
         <li><NavLink to="/create-course">Create a Course</NavLink></li>
         <li><NavLink to="/delete-courses">Delete Courses</NavLink></li>
       </ul>
