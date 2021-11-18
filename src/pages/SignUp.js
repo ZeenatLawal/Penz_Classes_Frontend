@@ -14,19 +14,33 @@ const SignUp = () => {
   };
 
   return (
-    <form onSubmit={(e) => handleSubmit(e)}>
+    <div>
       <h2>Sign Up</h2>
-      <input
-        type="text"
-        placeholder="Enter username"
-        onChange={(event) => {
-          const username = event.target.value;
-          setEnteredUserName({ ...enteredUserName, ...{ username } });
-        }}
-      />
-      <button type="submit">Sign Up</button>
-      <p className="border border-secondary w-25 text-center mt-3">{userInfo.message}</p>
-    </form>
+      <form onSubmit={(e) => handleSubmit(e)}>
+        <div className="col-auto border w-25 p-4">
+          <div className="input-group mb-2">
+            <div className="input-group-prepend">
+              <div className="input-group-text">@</div>
+            </div>
+            <input
+              type="text"
+              className="form-control"
+              id="inlineFormInputGroup"
+              placeholder="Username"
+              onChange={(event) => {
+                const username = event.target.value;
+                setEnteredUserName({ ...enteredUserName, ...{ username } });
+              }}
+            />
+          </div>
+        </div>
+        <button type="submit" className="btn btn-lg btn-secondary rounded-0 w-25">Sign Up</button>
+
+        <div className="alert alert-danger w-25 mt-3" role="alert">
+          {userInfo.message}
+        </div>
+      </form>
+    </div>
   );
 };
 

@@ -4,16 +4,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import { LoginAuthAction } from '../redux/users/actions/AuthAction';
 
 const Login = () => {
+  const userLoginInfo = useSelector((state) => state.authReducer);
+  const [loggedUserName, setLoggedUserName] = useState();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleRoutes = (path) => {
     navigate(path);
   };
-
-  const userLoginInfo = useSelector((state) => state.authReducer);
-  console.log(userLoginInfo);
-  const [loggedUserName, setLoggedUserName] = useState();
-  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,27 +20,40 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={(e) => handleSubmit(e)}>
+    <div>
       <h2>Log In</h2>
-      <input
-        type="text"
-        placeholder="Enter username"
-        onChange={(event) => {
-          const username = event.target.value;
-          setLoggedUserName({ ...loggedUserName, ...{ username } });
-        }}
-      />
-      <button type="submit" className="btn btn-secondary mx-3 my-4">Log In</button>
-      <p>{userLoginInfo.message}</p>
-      <div>
-        <span>New to Penz Classes?</span>
-        <span>
-          <button type="button" className="border-0 text-primary bg-body mx-2" onClick={() => handleRoutes('/signup')}>
-            Sign Up
-          </button>
-        </span>
-      </div>
-    </form>
+      <form onSubmit={(e) => handleSubmit(e)}>
+        <div className="col-auto border w-25 p-4">
+          <div className="input-group mb-2">
+            <div className="input-group-prepend">
+              <div className="input-group-text">@</div>
+            </div>
+            <input
+              type="text"
+              className="form-control"
+              id="inlineFormInputGroup"
+              placeholder="Username"
+              onChange={(event) => {
+                const username = event.target.value;
+                setLoggedUserName({ ...loggedUserName, ...{ username } });
+              }}
+            />
+          </div>
+        </div>
+        <button type="submit" className="btn btn-lg btn-secondary rounded-0 w-25">Log In</button>
+        <div className="w-25 text-center">
+          <span><small>New to Penz Classes?</small></span>
+          <span>
+            <button type="button" className="border-0 text-primary bg-body mx-2" onClick={() => handleRoutes('/signup')}>
+              <small>Sign Up</small>
+            </button>
+          </span>
+          <div className="alert alert-danger" role="alert">
+            {userLoginInfo.message}
+          </div>
+        </div>
+      </form>
+    </div>
   );
 };
 
