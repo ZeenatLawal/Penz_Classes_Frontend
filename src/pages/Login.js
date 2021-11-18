@@ -11,6 +11,7 @@ const Login = () => {
   };
 
   const userLoginInfo = useSelector((state) => state.authReducer);
+  console.log(userLoginInfo);
   const [loggedUserName, setLoggedUserName] = useState();
   const dispatch = useDispatch();
 

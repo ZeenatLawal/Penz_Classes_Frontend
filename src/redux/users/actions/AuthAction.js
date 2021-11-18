@@ -5,6 +5,8 @@ export const ActionType = {
   REGISTER_FAIL: 'REGISTER_FAIL',
   LOGIN_SUCCESS: 'LOGIN_SUCCESS',
   LOGIN_FAIL: 'LOGIN_FAIL',
+  LOGOUT_SUCCESS: 'LOGOUT_SUCCESS',
+  LOGOUT_FAIL: 'LOGOUT_FAIL',
 };
 
 export const RegisterAuthAction = (userState) => async (dispatch) => {
@@ -31,6 +33,21 @@ export const LoginAuthAction = (loginState) => async (dispatch) => {
     if (error.response) {
       dispatch({
         type: ActionType.LOGIN_FAIL,
+        payload: error.response.data.message,
+      });
+    }
+  }
+};
+
+export const LogoutAuthAction = (logoutState) => async (dispatch) => {
+  try {
+    const res = await axios.delete('http://localhost:3000/api/v1/logout', logoutState);
+    const { data } = res;
+    dispatch({ type: ActionType.LOGOUT_SUCCESS, payload: data });
+  } catch (error) {
+    if (error.response) {
+      dispatch({
+        type: ActionType.LOGOUT_FAIL,
         payload: error.response.data.message,
       });
     }
