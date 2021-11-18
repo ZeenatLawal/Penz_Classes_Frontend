@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Navigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { LoginAuthAction } from '../redux/users/actions/AuthAction';
 
@@ -8,7 +8,17 @@ const Login = () => {
   const [loggedUserName, setLoggedUserName] = useState();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  const alert = (
+    <div>
+      {!userLoginInfo.isLoggedIn ? (
+        <div className="alert text-danger" role="alert">
+          {userLoginInfo.message}
+        </div>
+      ) : (
+        <Navigate to="/" />
+      )}
+    </div>
+  );
   const handleRoutes = (path) => {
     navigate(path);
   };
@@ -41,16 +51,14 @@ const Login = () => {
           </div>
         </div>
         <button type="submit" className="btn btn-lg btn-secondary rounded-0 w-25">Log In</button>
-        <div className="w-25 text-center">
+        <div className="w-25 text-center mt-2">
           <span><small>New to Penz Classes?</small></span>
           <span>
             <button type="button" className="border-0 text-primary bg-body mx-2" onClick={() => handleRoutes('/signup')}>
               <small>Sign Up</small>
             </button>
           </span>
-          <div className="alert alert-danger" role="alert">
-            {userLoginInfo.message}
-          </div>
+          {alert}
         </div>
       </form>
     </div>
