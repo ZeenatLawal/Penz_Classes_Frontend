@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom';
 import NavbarFooter from './NavbarFooter';
 
 const Navbar = () => (
-  <div>
-    <h1>PENZ-Classes</h1>
+  <div className="w-25 p-2 border-end">
+    <h2>PENZ-Classes</h2>
     <nav>
       <ul>
         <li><NavLink to="/courses">Courses</NavLink></li>

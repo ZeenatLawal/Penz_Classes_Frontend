@@ -6,13 +6,15 @@ import DeleteCourse from './pages/DeleteCourse';
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/reserve" element={<ReserveForm />} />
-        <Route path="/delete-courses" element={<DeleteCourse />} />
-      </Routes>
-    </Router>
+    <div className="d-flex">
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/reserve" element={<ReserveForm />} />
+          <Route path="/delete-courses" element={<DeleteCourse />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 

@@ -1,19 +1,19 @@
 import React from 'react';
 import {
   FaTwitter, FaFacebookF, FaGooglePlusG,
-  FaPinterestP,
+  FaPinterestP, FaVimeoV,
 } from 'react-icons/fa';
 
 const NavbarFooter = () => (
   <div>
-    <ul>
+    <ul className="d-flex">
       <li><FaTwitter /></li>
       <li><FaFacebookF /></li>
       <li><FaGooglePlusG /></li>
-      <li>PENZ</li>
+      <li><FaVimeoV /></li>
       <li><FaPinterestP /></li>
-      <p>© 2021 PENZ-Classes </p>
     </ul>
+    <p>© 2021 PENZ-Classes </p>
   </div>
 );
 
