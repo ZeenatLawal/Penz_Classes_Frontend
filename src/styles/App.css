@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 
 :root {
-  --green: #97BF0F;
+  --green: #97bf0f;
 }
 
 *,
@@ -11,7 +11,8 @@ ul {
   padding: 0;
 }
 
-a {
+a,
+a:hover {
   text-decoration: none;
   color: black;
 }
@@ -28,12 +29,17 @@ li {
   height: 100vh;
 }
 
-.title {
+.title,
+.copy {
   font-family: 'Kaushan Script', cursive;
 }
 
 .active {
-  background-color: #97BF0F;
+  background-color: var(--green);
   color: white;
   padding: 10px 30px 10px 20px;
+}
+
+.copy {
+  font-size: 10px;
 }

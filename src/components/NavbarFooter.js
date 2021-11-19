@@ -6,14 +6,14 @@ import {
 
 const NavbarFooter = () => (
   <div>
-    <ul className="d-flex">
+    <ul className="d-flex justify-content-between">
       <li><FaTwitter /></li>
       <li><FaFacebookF /></li>
       <li><FaGooglePlusG /></li>
       <li><FaVimeoV /></li>
       <li><FaPinterestP /></li>
     </ul>
-    <p>© 2021 PENZ-Classes </p>
+    <p className="copy">© 2021 PENZ-Classes </p>
   </div>
 );
 
