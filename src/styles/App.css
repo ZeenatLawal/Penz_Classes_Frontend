@@ -12,6 +12,10 @@ ul {
   padding: 0;
 }
 
+body {
+  min-height: 100vh;
+}
+
 a,
 a:hover {
   text-decoration: none;
@@ -62,6 +66,15 @@ li {
 .form-width {
   width: 75%;
 }
+
+.course-details-img {
+  height: 100vh;
+}
+
+/* .course-details-title {
+  text-align: right;
+  font-weight: 700;
+} */
 
 @media only screen and (min-width: 768px) {
   .App {

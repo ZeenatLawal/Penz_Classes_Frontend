@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button, Modal, Form } from 'react-bootstrap';
+import {
+  Button, Modal, Form, Row, Col, Table,
+} from 'react-bootstrap';
 import { selectedCourse } from '../redux/courses/Courses';
 import { reserve } from '../redux/reservations/Reservations';
 
@@ -26,7 +28,7 @@ const CourseDetails = () => {
   const handleReservation = () => {
     const reservationInfo = {
       user,
-      courseId: courses.id,
+      courseId: id,
       date,
     };
     dispatch(reserve(reservationInfo));
@@ -39,13 +41,31 @@ const CourseDetails = () => {
   }, [courseId]);
 
   return (
-    <div className="container">
-      <div key={id}>
-        <div><img src={image} alt="" /></div>
-        <div>{title}</div>
-        <div>{instructorName}</div>
-      </div>
-      <Button className="button" type="button" onClick={() => setSmShow(true)}>Reserve</Button>
+    <div className="p-3 w-100">
+      <Row>
+        <Col sm={12} md={8} className="course-details-img d-flex justify-content-center align-items-center"><div><img src={image} alt="" /></div></Col>
+        <Col sm={12} md={4} className="mt-5">
+          <div className="course-details-title text-uppercase fs-4 text-right font-weight-bold">{title}</div>
+          <p className="font-italic fs-6 text-right mb-4">Reserve Now!!!</p>
+          <Table striped bordered hover>
+            <tbody>
+              <tr>
+                <td>{title}</td>
+              </tr>
+              <tr>
+                <td>{instructorName}</td>
+              </tr>
+              <tr>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </Table>
+          {/* <div>{title}</div>
+          <div>{instructorName}</div> */}
+          <Button className="button" type="button" onClick={() => setSmShow(true)}>Reserve</Button>
+        </Col>
+      </Row>
+
       <Modal
         size="sm"
         show={smShow}
