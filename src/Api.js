@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 const url = 'http://localhost:3000/api/v1/courses';
 
 const getCourses = async () => {
@@ -47,6 +49,12 @@ const deleteCourse = async (courseId) => {
   const result = await request.json();
   return result;
 };
+
+const showCourses = async (courseId) => {
+  const response = await axios.get(`${url}/${courseId}`);
+  return response.data;
+};
+
 export {
-  getCourses, reserveCourse, fetchReserveCourses, deleteCourse,
+  getCourses, reserveCourse, fetchReserveCourses, deleteCourse, showCourses,
 };
