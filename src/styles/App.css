@@ -32,7 +32,7 @@ li {
 }
 
 .title {
-  color: var(--green)!important;
+  color: var(--green) !important;
 }
 
 .title,
