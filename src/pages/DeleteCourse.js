@@ -15,7 +15,8 @@ const DeleteCourse = () => {
   }, [dispatch]);
 
   return (
-    <Container>
+    <Container className="pt-5">
+      <h2 className="text-center mb-4">Delete Courses</h2>
       <Table striped bordered>
         <thead>
           <tr>

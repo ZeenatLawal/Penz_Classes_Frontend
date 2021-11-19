@@ -1,21 +1,50 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import Container from 'react-bootstrap/Container';
 import NavbarFooter from './NavbarFooter';
+import { LogoutAuthAction } from '../redux/users/actions/AuthAction';
 
-const Navbar = () => (
-  <div>
-    <h1>PENZ-Classes</h1>
-    <nav>
-      <ul>
-        <li><NavLink to="/courses">Courses</NavLink></li>
-        <li><NavLink to="/reserve">Reserve Form</NavLink></li>
-        <li><NavLink to="/myreservations">My Reservations</NavLink></li>
-        <li><NavLink to="/create-course">Create a Course</NavLink></li>
-        <li><NavLink to="/delete-courses">Delete Courses</NavLink></li>
-      </ul>
-    </nav>
-    <NavbarFooter />
-  </div>
-);
+const Navpanel = () => {
+  const userLogoutInfo = useSelector((state) => state.authReducer);
+  const dispatch = useDispatch();
+  const handleChange = () => {
+    dispatch(LogoutAuthAction());
+  };
+  return (
+    <Navbar collapseOnSelect expand="md" bg="light" className="">
+      <Container className="flex-md-column">
+        <Navbar.Brand className="title mb-md-5 mx-md-5">PENZ-Classes</Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav" className="flex-column">
+          <Nav className="me-auto align-items-center mb-md-5">
+            {userLogoutInfo.isLoggedIn ? (
+              <div>
+                <ul>
+                  <li><NavLink activeClassName="active" to="/courses">Courses</NavLink></li>
+                  <li><NavLink activeClassName="active" to="/reserve">Reserve Form</NavLink></li>
+                  <li><NavLink activeClassName="active" to="/reservations">My Reservations</NavLink></li>
+                  <li><NavLink activeClassName="active" to="/create-course">Create a Course</NavLink></li>
+                  <li><NavLink activeClassName="active" to="/delete-courses">Delete Courses</NavLink></li>
+                  <li><NavLink activeClassName="active" to="/" onClick={handleChange}>Logout</NavLink></li>
+                </ul>
+              </div>
+            ) : (
+              <ul>
+                <li><NavLink to="/login">Login</NavLink></li>
+                <li><NavLink to="/signup">Signup</NavLink></li>
+              </ul>
+            )}
+          </Nav>
+          <Nav className="d-none d-md-block align-self-stretch footer">
+            <NavbarFooter />
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
+};
 
-export default Navbar;
+export default Navpanel;
