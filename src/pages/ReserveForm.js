@@ -44,7 +44,7 @@ const ReserveForm = () => {
         <Form.Label>Select a course</Form.Label>
         <Drop onChange={onCourseChange} />
 
-        <Button type="submit" className="button">Reserve</Button>
+        <Button type="submit" className="button rounded-pill">Reserve</Button>
       </Form>
     </Container>
   );

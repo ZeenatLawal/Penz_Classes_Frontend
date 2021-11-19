@@ -52,8 +52,11 @@ li {
 
 .button,
 .button:hover {
-  background-color: var(--green);
+  background-color: white;
+  color: var(--green);
   border-color: var(--green);
+  padding: 10px 40px;
+  font-weight: bold;
 }
 
 .form-width {
