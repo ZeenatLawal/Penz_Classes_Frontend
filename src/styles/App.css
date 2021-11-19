@@ -50,6 +50,19 @@ li {
   font-size: 10px;
 }
 
+.button,
+.button:hover {
+  background-color: white;
+  color: var(--green);
+  border-color: var(--green);
+  padding: 10px 40px;
+  font-weight: bold;
+}
+
+.form-width {
+  width: 75%;
+}
+
 @media only screen and (min-width: 768px) {
   .App {
     height: 100vh;
@@ -57,5 +70,9 @@ li {
 
   .footer {
     padding-top: 100px;
+  }
+
+  .form-width {
+    width: 40%;
   }
 }
