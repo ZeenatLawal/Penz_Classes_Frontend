@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/App.css';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -12,11 +12,11 @@ const ReserveForm = () => {
   const [date, setDate] = useState();
   const [courseId, setCourse] = useState(0);
   const [validated, setValidated] = useState(false);
+  const user = useSelector((state) => state.authReducer.user.user_id);
 
   const onDateChange = (e) => setDate((e.target.value));
   const onCourseChange = (value) => setCourse(value);
 
-  const user = 5;
   const handleSubmit = (e) => {
     const course = {
       user,
