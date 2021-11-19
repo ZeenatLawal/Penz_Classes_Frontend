@@ -13,7 +13,6 @@ const Navpanel = () => {
   const handleChange = () => {
     dispatch(LogoutAuthAction());
   };
-
   return (
     <Navbar collapseOnSelect expand="md" bg="light" className="">
       <Container className="flex-md-column">

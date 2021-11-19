@@ -6,6 +6,12 @@ const getCourses = async () => {
   return result;
 };
 
+const fetchReserveCourses = async () => {
+  const url = 'http://localhost:3000/api/v1/reservations';
+  const response = await fetch(url);
+  const result = await response.json();
+  return result;
+};
 const reserveCourse = async (course) => {
   const request = await fetch('http://localhost:3000/api/v1/reservations', {
     method: 'POST',
@@ -41,5 +47,6 @@ const deleteCourse = async (courseId) => {
   const result = await request.json();
   return result;
 };
-
-export { getCourses, reserveCourse, deleteCourse };
+export {
+  getCourses, reserveCourse, fetchReserveCourses, deleteCourse,
+};

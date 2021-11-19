@@ -8,6 +8,7 @@ import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import ReserveForm from './pages/ReserveForm';
 import DeleteCourse from './pages/DeleteCourse';
+import MyReservations from './pages/MyReservations';
 
 function App() {
   return (
