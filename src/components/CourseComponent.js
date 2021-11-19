@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const CourseComponent = ({course}) => {
   const dispatch = useDispatch();
@@ -11,7 +12,9 @@ const CourseComponent = ({course}) => {
       <h4>{course.title}</h4>
       <h6>{course.instructor}</h6>
       <p>{course.description}</p>
-      <img src={course.image}/>
+      <Link to={`/courses/${course.id}`}>
+        <img src={course.image}/>
+      </Link>
       <FaFacebook />
       <FaTwitter />
       <FaInstagram />
