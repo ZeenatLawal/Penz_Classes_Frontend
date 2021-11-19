@@ -6,7 +6,6 @@ import { loadCourses } from '../redux/courses/Courses';
 
 const Drop = ({ onChange }) => {
   const courses = useSelector((state) => state.coursesReducer.courses);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
