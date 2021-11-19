@@ -2,6 +2,7 @@ import { getCourses, deleteCourse } from '../../Api';
 
 const GET_COURSES = 'penz_classes_frontend/courses/GET_COURSES';
 const DELETE_COURSE = 'penz_classes_frontend/courses/DELETE_COURSE';
+const SELECTED_COURSE = 'penz_classes_frontend/courses/SELECTED_COURSE';
 
 const initialState = [];
 
@@ -39,6 +40,11 @@ export const removeCourse = (course) => async (dispatch) => {
   }
 };
 
+export const selectedCourse = (course) => ({
+  type: SELECTED_COURSE,
+  payload: course,
+});
+
 const coursesReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_COURSES:
@@ -50,6 +56,11 @@ const coursesReducer = (state = initialState, action) => {
       return {
         ...state,
         courses: action.payload,
+      };
+    case SELECTED_COURSE:
+      return {
+        ...state,
+        ...action.payload,
       };
     default:
       return state;

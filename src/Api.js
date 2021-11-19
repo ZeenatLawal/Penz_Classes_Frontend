@@ -50,11 +50,6 @@ const deleteCourse = async (courseId) => {
   return result;
 };
 
-const showCourses = async (courseId) => {
-  const response = await axios.get(`${url}/${courseId}`);
-  return response.data;
-};
-
 export {
-  getCourses, reserveCourse, fetchReserveCourses, deleteCourse, showCourses,
+  getCourses, reserveCourse, fetchReserveCourses, deleteCourse,
 };
