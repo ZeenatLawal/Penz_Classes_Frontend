@@ -1,6 +1,6 @@
 import './styles/App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import Navpanel from './components/Navbar';
 import LandingPage from './pages/LandingPage';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
@@ -9,9 +9,9 @@ import DeleteCourse from './pages/DeleteCourse';
 
 function App() {
   return (
-    <div className="d-flex">
+    <div className="d-flex flex-md-row flex-column App">
       <Router>
-        <Navbar />
+        <Navpanel />
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<Login />} />
