@@ -13,7 +13,7 @@ const Drop = ({ onChange }) => {
   }, [dispatch]);
 
   return (
-    <Form.Select aria-label="Select a Course" onChange={(e) => onChange(e.target.value)} required>
+    <Form.Select aria-label="Select a Course" onChange={(e) => onChange(e.target.value)} className="mb-4 rounded-pill" required>
       <option value="">Select a Course</option>
       {courses && courses.map((course) => (
         <option value={course.id} key={course.id}>
