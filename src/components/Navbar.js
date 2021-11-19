@@ -1,10 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import Container from 'react-bootstrap/Container';
 import NavbarFooter from './NavbarFooter';
 import { LogoutAuthAction } from '../redux/users/actions/AuthAction';
 
-const Navbar = () => {
+const Navpanel = () => {
   const userLogoutInfo = useSelector((state) => state.authReducer);
   const dispatch = useDispatch();
   const handleChange = () => {
@@ -12,30 +15,37 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-25 p-2 border-end d-flex flex-column justify-content-between align-items-center nav">
-      <nav>
-        <h3 className="pb-5 pt-3 title">PENZ-Classes</h3>
-        {userLogoutInfo.isLoggedIn ? (
-          <div>
-            <ul>
-              <li><NavLink activeClassName="active" to="/courses">Courses</NavLink></li>
-              <li><NavLink activeClassName="active" to="/reserve">Reserve Form</NavLink></li>
-              <li><NavLink activeClassName="active" to="/reservations">My Reservations</NavLink></li>
-              <li><NavLink activeClassName="active" to="/create-course">Create a Course</NavLink></li>
-              <li><NavLink activeClassName="active" to="/delete-courses">Delete Courses</NavLink></li>
-              <li><NavLink to="/" onClick={handleChange}>Logout</NavLink></li>
-            </ul>
-          </div>
-        ) : (
-          <ul>
-            <li><NavLink to="/login">Login</NavLink></li>
-            <li><NavLink to="/signup">Signup</NavLink></li>
-          </ul>
-        )}
-      </nav>
-      <NavbarFooter />
-    </div>
+    <Navbar collapseOnSelect expand="md" bg="light" className="">
+      <Container className="flex-md-column">
+        <Navbar.Brand className="title mb-md-5 mx-md-5">PENZ-Classes</Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav" className="flex-column">
+          <Nav className="me-auto align-items-center mb-md-5">
+            {userLogoutInfo.isLoggedIn ? (
+              <div>
+                <ul>
+                  <li><NavLink activeClassName="active" to="/courses">Courses</NavLink></li>
+                  <li><NavLink activeClassName="active" to="/reserve">Reserve Form</NavLink></li>
+                  <li><NavLink activeClassName="active" to="/reservations">My Reservations</NavLink></li>
+                  <li><NavLink activeClassName="active" to="/create-course">Create a Course</NavLink></li>
+                  <li><NavLink activeClassName="active" to="/delete-courses">Delete Courses</NavLink></li>
+                  <li><NavLink activeClassName="active" to="/" onClick={handleChange}>Logout</NavLink></li>
+                </ul>
+              </div>
+            ) : (
+              <ul>
+                <li><NavLink to="/login">Login</NavLink></li>
+                <li><NavLink to="/signup">Signup</NavLink></li>
+              </ul>
+            )}
+          </Nav>
+          <Nav className="d-none d-md-block align-self-stretch footer">
+            <NavbarFooter />
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
 
-export default Navbar;
+export default Navpanel;
