@@ -21,6 +21,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/myreservations" element={<MyReservations />} />
           <Route path="/reserve" element={<ReserveForm />} />
           <Route path="/delete-courses" element={<DeleteCourse />} />
         </Routes>

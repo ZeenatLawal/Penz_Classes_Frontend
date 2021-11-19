@@ -23,12 +23,12 @@ const Navpanel = () => {
             {userLogoutInfo.isLoggedIn ? (
               <div>
                 <ul>
-                  <li><NavLink activeClassName="active" to="/courses">Courses</NavLink></li>
-                  <li><NavLink activeClassName="active" to="/reserve">Reserve Form</NavLink></li>
-                  <li><NavLink activeClassName="active" to="/reservations">My Reservations</NavLink></li>
-                  <li><NavLink activeClassName="active" to="/create-course">Create a Course</NavLink></li>
-                  <li><NavLink activeClassName="active" to="/delete-courses">Delete Courses</NavLink></li>
-                  <li><NavLink activeClassName="active" to="/" onClick={handleChange}>Logout</NavLink></li>
+                  <li><NavLink activeclassname="active" to="/courses">Courses</NavLink></li>
+                  <li><NavLink activeclassname="active" to="/reserve">Reserve Form</NavLink></li>
+                  <li><NavLink activeclassname="active" to="/myreservations">My Reservations</NavLink></li>
+                  <li><NavLink activeclassname="active" to="/create-course">Create a Course</NavLink></li>
+                  <li><NavLink activeclassname="active" to="/delete-courses">Delete Courses</NavLink></li>
+                  <li><NavLink activeclassname="active" to="/" onClick={handleChange}>Logout</NavLink></li>
                 </ul>
               </div>
             ) : (
