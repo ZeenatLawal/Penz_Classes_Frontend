@@ -11,6 +11,8 @@ export const loadCourses = () => async (dispatch) => {
     id: course.id,
     title: course.title,
     instructor: course.instructor_name,
+    description: course.description,
+    image: course.image,
   }));
 
   if (courses) {
