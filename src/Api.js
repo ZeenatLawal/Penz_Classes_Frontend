@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 const url = 'http://localhost:3000/api/v1/courses';
 
 const getCourses = async () => {

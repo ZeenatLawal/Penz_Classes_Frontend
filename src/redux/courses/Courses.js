@@ -40,9 +40,9 @@ export const removeCourse = (course) => async (dispatch) => {
   }
 };
 
-export const selectedCourse = (course) => ({
+export const selectedCourse = (payload) => ({
   type: SELECTED_COURSE,
-  payload: course,
+  payload,
 });
 
 const coursesReducer = (state = initialState, action) => {
@@ -59,7 +59,6 @@ const coursesReducer = (state = initialState, action) => {
       };
     case SELECTED_COURSE:
       return {
-        ...state,
         ...action.payload,
       };
     default:
