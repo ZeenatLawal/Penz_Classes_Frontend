@@ -1,9 +1,20 @@
-import { getCourses, deleteCourse } from '../../Api';
+import { getCourses, deleteCourse, addCourse } from '../../Api';
 
 const GET_COURSES = 'penz_classes_frontend/courses/GET_COURSES';
 const DELETE_COURSE = 'penz_classes_frontend/courses/DELETE_COURSE';
+const ADD_COURSE = 'penz_classes_frontend/courses/ADD_COURSE';
 
 const initialState = [];
+
+export const addNewCourses = (course) => async (dispatch) => {
+  const received = await addCourse(course);
+  if (received) {
+    dispatch({
+      type: ADD_COURSE,
+      payload: received,
+    });
+  }
+};
 
 export const loadCourses = () => async (dispatch) => {
   const getResult = await getCourses();
@@ -47,6 +58,11 @@ const coursesReducer = (state = initialState, action) => {
         courses: action.payload,
       };
     case DELETE_COURSE:
+      return {
+        ...state,
+        courses: action.payload,
+      };
+    case ADD_COURSE:
       return {
         ...state,
         courses: action.payload,
