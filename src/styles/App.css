@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+:root {
+  --green: #97bf0f;
+  --light-green: #e6f1c2;
+}
+
+*,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  padding-bottom: 20px;
+}
+
+.App {
+  height: 130vh;
+  background-color: var(--light-green);
+}
+
+.title {
+  color: var(--green) !important;
+}
+
+.title,
+.copy {
+  font-family: 'Kaushan Script', cursive;
+}
+
+.active {
+  background-color: var(--green);
+  color: white;
+  padding: 10px 30px 10px 20px;
+}
+
+.copy {
+  font-size: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .App {
+    height: 100vh;
+  }
+
+  .footer {
+    padding-top: 100px;
+  }
+}
