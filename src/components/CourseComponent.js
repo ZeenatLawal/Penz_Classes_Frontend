@@ -7,8 +7,8 @@ const CourseComponent = ({course}) => {
   const dispatch = useDispatch();
   return (
     <div key={course.id}>
-      <h2>{course.title}</h2>
-      <h3>{course.instructor}</h3>
+      <h4>{course.title}</h4>
+      <h6>{course.instructor}</h6>
       <p>{course.description}</p>
       <img src={course.image}/>
     </div>
