@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -15,6 +15,11 @@ const CourseDetails = () => {
   const [date, setDate] = useState();
   const dispatch = useDispatch();
   const { courseId } = useParams();
+  const navigate = useNavigate();
+
+  const handleRoutes = (path) => {
+    navigate(path);
+  };
 
   const {
     id, title, instructor_name: instructorName, image,
@@ -81,7 +86,7 @@ const CourseDetails = () => {
         <Modal.Body>
           <Form onSubmit={handleReservation}>
             <Form.Control type="date" onChange={(e) => setDate(e.target.value)} className="mb-4" />
-            <Button type="submit" className="button">Reserve</Button>
+            <Button type="submit" onClick={() => handleRoutes('/myreservations')} className="button">Reserve</Button>
           </Form>
         </Modal.Body>
       </Modal>
