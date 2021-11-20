@@ -71,10 +71,13 @@ li {
   height: 100vh;
 }
 
-/* .course-details-title {
-  text-align: right;
-  font-weight: 700;
-} */
+.course-details-title {
+  color: var(--green);
+}
+
+.details-btn {
+  margin-top: 200px;
+}
 
 @media only screen and (min-width: 768px) {
   .App {

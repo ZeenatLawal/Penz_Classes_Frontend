@@ -47,22 +47,23 @@ const CourseDetails = () => {
         <Col sm={12} md={4} className="mt-5">
           <div className="course-details-title text-uppercase fs-4 text-right font-weight-bold">{title}</div>
           <p className="font-italic fs-6 text-right mb-4">Reserve Now!!!</p>
-          <Table striped bordered hover>
-            <tbody>
-              <tr>
-                <td>{title}</td>
-              </tr>
-              <tr>
-                <td>{instructorName}</td>
-              </tr>
-              <tr>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </Table>
-          {/* <div>{title}</div>
-          <div>{instructorName}</div> */}
-          <Button className="button" type="button" onClick={() => setSmShow(true)}>Reserve</Button>
+          <div>
+            <Table responsive="sm" striped bordered hover>
+              <tbody>
+                <tr>
+                  <td className="py-3">CourseCode:</td>
+                  <td className="text-right py-3">{`${id}001`}</td>
+                </tr>
+                <tr>
+                  <td className="py-3">Instructor:</td>
+                  <td className="text-right py-3">{instructorName}</td>
+                </tr>
+              </tbody>
+            </Table>
+          </div>
+          <div className="text-right details-btn">
+            <Button className="button rounded-pill" type="button" onClick={() => setSmShow(true)}>Reserve</Button>
+          </div>
         </Col>
       </Row>
 
