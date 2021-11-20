@@ -13,15 +13,18 @@ const Courseform = () => {
 
   const onTitleChange = (e) => setTitle(e.target.value);
   const onDescriptionChange = (e) => setDescription(e.target.value);
-  const onImageChange = (e) => setImage(e.target.files);
+  const onImageChange = (e) => setImage(e.target.files[0]);
   const onInstructorChange = (e) => setInstructor(e.target.value);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const course = {
-      title, description, image, instructor,
-    };
-    dispatch(addNewCourses(course));
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('description', description);
+    formData.append('image', image);
+    formData.append('instructor_name', instructor);
+
+    dispatch(addNewCourses(formData));
     setTitle('');
     setDescription('');
     setImage('');
@@ -37,7 +40,7 @@ const Courseform = () => {
         <Form.Label>Add course description</Form.Label>
         <Form.Control onChange={onDescriptionChange} type="text" />
         <Form.Label>Add image</Form.Label>
-        <Form.Control onChange={onImageChange} type="file" />
+        <Form.Control onChange={onImageChange} type="file" accept="image/*" />
         <Form.Label>Add instructor name</Form.Label>
         <Form.Control onChange={onInstructorChange} type="text" />
         <Button type="submit">Add course</Button>
