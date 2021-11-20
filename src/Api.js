@@ -11,14 +11,9 @@ const addCourse = async (course) => {
     method: 'POST',
     credentials: 'same-origin',
     headers: {
-      'Content-Type': 'application/json',
+      accepts: 'application/json',
     },
-    body: JSON.stringify({
-      instructor_name: course.instructor,
-      title: course.title,
-      description: course.description,
-      image: course.image,
-    }),
+    body: course,
   });
   return response.json();
 };
