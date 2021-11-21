@@ -30,10 +30,10 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="m-auto">
       <h2>Log In</h2>
       <form onSubmit={(e) => handleSubmit(e)}>
-        <div className="col-auto border w-25 p-4">
+        <div className="col-auto border p-4">
           <div className="input-group mb-2">
             <div className="input-group-prepend">
               <div className="input-group-text">@</div>
@@ -50,8 +50,8 @@ const Login = () => {
             />
           </div>
         </div>
-        <button type="submit" className="btn btn-lg btn-secondary rounded-0 w-25">Log In</button>
-        <div className="w-25 text-center mt-2">
+        <button type="submit" className="btn btn-lg btn-secondary rounded-0 w-100">Log In</button>
+        <div className="text-center mt-2">
           <span><small>New to Penz Classes?</small></span>
           <span>
             <button type="button" className="border-0 text-primary bg-body mx-2" onClick={() => handleRoutes('/signup')}>
