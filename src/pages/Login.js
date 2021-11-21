@@ -54,7 +54,7 @@ const Login = () => {
         <div className="text-center mt-2">
           <span><small>New to Penz Classes?</small></span>
           <span>
-            <button type="button" className="border-0 text-primary bg-body mx-2" onClick={() => handleRoutes('/signup')}>
+            <button type="button" className="border-0 p-1 text-primary bg-body mx-2" onClick={() => handleRoutes('/signup')}>
               <small>Sign Up</small>
             </button>
           </span>
