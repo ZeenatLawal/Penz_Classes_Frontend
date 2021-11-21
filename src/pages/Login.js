@@ -31,7 +31,7 @@ const Login = () => {
 
   return (
     <div className="m-auto">
-      <h2>Log In</h2>
+      <h3>LOGIN</h3>
       <form onSubmit={(e) => handleSubmit(e)}>
         <div className="col-auto border p-4">
           <div className="input-group mb-2">
