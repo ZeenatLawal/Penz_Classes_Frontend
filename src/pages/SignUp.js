@@ -18,10 +18,10 @@ const SignUp = () => {
     navigate(path);
   };
   return (
-    <div>
+    <div className="m-auto">
       <h2>Sign Up</h2>
       <form onSubmit={(e) => handleSubmit(e)}>
-        <div className="col-auto border w-25 p-4">
+        <div className="col-auto border p-4">
           <div className="input-group mb-2">
             <div className="input-group-prepend">
               <div className="input-group-text">@</div>
@@ -38,7 +38,7 @@ const SignUp = () => {
             />
           </div>
         </div>
-        <button type="submit" className="btn btn-lg btn-secondary rounded-0 w-25">
+        <button type="submit" className="btn btn-lg btn-secondary rounded-0 w-100">
           Sign Up
         </button>
         {!userInfo.isLoggedIn ? (
