@@ -15,7 +15,7 @@ import { checkAutoLogin } from './redux/users/actions/AuthAction';
 
 function App() {
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
     checkAutoLogin(dispatch);
   }, [dispatch, checkAutoLogin]);
