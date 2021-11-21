@@ -9,10 +9,15 @@ export const ActionType = {
   LOGOUT_FAIL: 'LOGOUT_FAIL',
 };
 
+const saveTokenInLocalStorage = (tokenDetails) => {
+  localStorage.setItem('userDetails', JSON.stringify(tokenDetails));
+};
+
 export const RegisterAuthAction = (userState) => async (dispatch) => {
   try {
     const res = await axios.post('http://localhost:3000/api/v1/signup', userState);
     const { data } = res;
+    saveTokenInLocalStorage(data);
     dispatch({ type: ActionType.REGISTER_SUCCESS, payload: data });
   } catch (error) {
     if (error.response) {
@@ -28,6 +33,7 @@ export const LoginAuthAction = (loginState) => async (dispatch) => {
   try {
     const res = await axios.post('http://localhost:3000/api/v1/login', loginState);
     const { data } = res;
+    saveTokenInLocalStorage(data);
     dispatch({ type: ActionType.LOGIN_SUCCESS, payload: data });
   } catch (error) {
     if (error.response) {
