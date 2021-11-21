@@ -12,10 +12,6 @@ ul {
   padding: 0;
 }
 
-body {
-  min-height: 100vh;
-}
-
 a,
 a:hover {
   text-decoration: none;
@@ -35,7 +31,8 @@ li {
   background-color: var(--light-green);
 }
 
-.title {
+.title,
+.details-title {
   color: var(--green) !important;
 }
 
@@ -67,16 +64,16 @@ li {
   width: 75%;
 }
 
-.course-details-img {
-  height: 100vh;
+.list-group .list-group-item:nth-child(odd) {
+  background: var(--green);
 }
 
-.course-details-title {
-  color: var(--green);
+.list-group .list-group-item:nth-child(even) {
+  background: var(--light-green);
 }
 
-.details-btn {
-  margin-top: 200px;
+.details-reserve-btn {
+  margin-top: 129px;
 }
 
 @media only screen and (min-width: 768px) {
