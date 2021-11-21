@@ -60,3 +60,15 @@ export const LogoutAuthAction = (logoutState) => async (dispatch) => {
     }
   }
 };
+
+export const checkAutoLogin = (dispatch) => {
+  const tokenDetailsString = localStorage.getItem('userDetails');
+  let tokenDetails = '';
+  if (!tokenDetailsString) {
+    dispatch(LogoutAuthAction);
+    return;
+  }
+
+  tokenDetails = JSON.parse(tokenDetailsString);
+  dispatch(LoginAuthAction(tokenDetails));
+};
