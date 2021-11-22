@@ -9,10 +9,15 @@ export const ActionType = {
   LOGOUT_FAIL: 'LOGOUT_FAIL',
 };
 
+const saveTokenInLocalStorage = (tokenDetails) => {
+  localStorage.setItem('userDetails', JSON.stringify(tokenDetails));
+};
+
 export const RegisterAuthAction = (userState) => async (dispatch) => {
   try {
     const res = await axios.post('http://localhost:3000/api/v1/signup', userState);
     const { data } = res;
+    saveTokenInLocalStorage(data);
     dispatch({ type: ActionType.REGISTER_SUCCESS, payload: data });
   } catch (error) {
     if (error.response) {
@@ -28,6 +33,7 @@ export const LoginAuthAction = (loginState) => async (dispatch) => {
   try {
     const res = await axios.post('http://localhost:3000/api/v1/login', loginState);
     const { data } = res;
+    saveTokenInLocalStorage(data);
     dispatch({ type: ActionType.LOGIN_SUCCESS, payload: data });
   } catch (error) {
     if (error.response) {
@@ -43,6 +49,7 @@ export const LogoutAuthAction = (logoutState) => async (dispatch) => {
   try {
     const res = await axios.delete('http://localhost:3000/api/v1/logout', logoutState);
     const { data } = res;
+    localStorage.removeItem('userDetails');
     dispatch({ type: ActionType.LOGOUT_SUCCESS, payload: data });
   } catch (error) {
     if (error.response) {
@@ -52,4 +59,16 @@ export const LogoutAuthAction = (logoutState) => async (dispatch) => {
       });
     }
   }
+};
+
+export const checkAutoLogin = (dispatch) => {
+  const tokenDetailsString = localStorage.getItem('userDetails');
+  let tokenDetails = '';
+  if (!tokenDetailsString) {
+    dispatch(LogoutAuthAction);
+    return;
+  }
+
+  tokenDetails = JSON.parse(tokenDetailsString);
+  dispatch(LoginAuthAction(tokenDetails));
 };

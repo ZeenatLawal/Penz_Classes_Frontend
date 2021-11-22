@@ -31,7 +31,8 @@ li {
   background-color: var(--light-green);
 }
 
-.title {
+.title,
+.details-title {
   color: var(--green) !important;
 }
 
@@ -61,6 +62,18 @@ li {
 
 .form-width {
   width: 75%;
+}
+
+.list-group .list-group-item:nth-child(odd) {
+  background: var(--green);
+}
+
+.list-group .list-group-item:nth-child(even) {
+  background: var(--light-green);
+}
+
+.details-reserve-btn {
+  margin-top: 129px;
 }
 
 @media only screen and (min-width: 768px) {
