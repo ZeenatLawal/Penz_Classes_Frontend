@@ -23,7 +23,7 @@ const Courseform = () => {
     formData.append('description', description);
     formData.append('image', image);
     formData.append('instructor_name', instructor);
-
+    formData.append('upload_preset', 'penz-classes');
     dispatch(addNewCourses(formData));
     setTitle('');
     setDescription('');
