@@ -8,16 +8,20 @@ import { Link } from 'react-router-dom';
 const CourseComponent = ({course}) => {
   const dispatch = useDispatch();
   return (
-    <div key={course.id}>
-      <h4>{course.title}</h4>
-      <h6>{course.instructor}</h6>
-      <p>{course.description}</p>
-      <Link to={`/courses/${course.id}`}>
-        <img src={course.image}/>
-      </Link>
-      <FaFacebook />
-      <FaTwitter />
-      <FaInstagram />
+    <div className="container">
+        <div className="w-25" key={course.id}>
+          <Link to={`/courses/${course.id}`}>
+            <img className="w-100" src={course.image}/>
+          </Link>
+          <h4 className="text-center">{course.title}</h4>
+          <hr className="w-50 mx-auto" />
+            <p className="text-break">{course.description}</p>
+          <div className="p-2 d-flex justify-content-evenly">
+            <FaFacebook />
+            <FaTwitter />
+            <FaInstagram />
+          </div>
+        </div>
     </div>
   );
 };
