@@ -2,38 +2,33 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { loadCourses } from "../redux/courses/Courses";
-import CourseComponent from "./CourseComponent";
-import { Carousel } from "react-bootstrap";
+import { StyledComponent, CourseComponent } from "./CourseComponent";
+import Carousel from "react-elastic-carousel";
+
+const breakPoints = [
+  { width: 1, itemsToShow: 1 },
+  { width: 558, itemsToShow: 2 },
+  { width: 768, itemsToShow: 3 },
+  { width: 1200, itemsToShow: 4 },
+]
 
 const CourseListing = () => {
   const courses = useSelector((state) => state.coursesReducer.courses);
-  // const state = courses.sort(() => 0.5 - Math.random());
-
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(loadCourses());
   }, [dispatch]);
   return (
-    <div className="container">
-        {courses && courses.map((course) => (
-          <Carousel variant="dark">
-            <Carousel.Item className="d-flex w-100">
-              <CourseComponent
-                key={course.id}
-                course={course}
-              />
-              <CourseComponent
-                key={course.id}
-                course={course}
-              />
-              <CourseComponent
-                key={course.id}
-                course={course}
-              />
-            </Carousel.Item>
-          </Carousel>
-          ))}
-    </div>
+    <>
+        <Carousel breakPoints={breakPoints}>
+          {courses && courses.map((course) => (
+                <CourseComponent
+                  key={course.id}
+                  course={course}
+                />
+            ))}
+        </Carousel>
+    </>
   );
 };
 
