@@ -81,7 +81,15 @@ li {
 }
 
 .form-border {
-  background: var(--green);;
+  background: #fff;
+  color: var(--green);
+}
+
+.form-border .btn,
+.landing-page .btn {
+  background: var(--green) !important;
+  color: var(--green);
+  border: none;
 }
 
 @media only screen and (min-width: 768px) {

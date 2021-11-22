@@ -47,7 +47,7 @@ const Courseform = () => {
     <div className="d-flex justify-content-center align-items-center w-100">
       <Form onSubmit={handleSubmit} noValidate validated={validated}>
         <h2 className="text-center page-title mb-4 text-uppercase">Add course</h2>
-        <div className="px-4 py-3 form-border text-white">
+        <div className="px-4 py-3 form-border">
           <Form.Label>Add course title</Form.Label>
           <Form.Control onChange={onTitleChange} type="text" className="mb-3" required />
           <Form.Label>Add course description</Form.Label>
@@ -56,7 +56,7 @@ const Courseform = () => {
           <Form.Control onChange={onImageChange} type="file" accept="image/*" className="mb-3" required />
           <Form.Label>Add instructor name</Form.Label>
           <Form.Control onChange={onInstructorChange} type="text" className="mb-3" required />
-          <div className="text-right"><Button type="submit" onClick={() => handleRoutes('/courses')} className="button">Add course</Button></div>
+          <div className="text-right"><Button type="submit" onClick={() => handleRoutes('/courses')} className="btn btn-lg text-white">Add course</Button></div>
         </div>
       </Form>
     </div>
