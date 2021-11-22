@@ -44,18 +44,20 @@ const Courseform = () => {
   };
 
   return (
-    <div>
+    <div className="d-flex justify-content-center align-items-center w-100">
       <Form onSubmit={handleSubmit} noValidate validated={validated}>
-        <h2>Add course</h2>
-        <Form.Label>Add course title</Form.Label>
-        <Form.Control onChange={onTitleChange} type="text" required />
-        <Form.Label>Add course description</Form.Label>
-        <Form.Control onChange={onDescriptionChange} type="text" required />
-        <Form.Label>Add image</Form.Label>
-        <Form.Control onChange={onImageChange} type="file" accept="image/*" required />
-        <Form.Label>Add instructor name</Form.Label>
-        <Form.Control onChange={onInstructorChange} type="text" required />
-        <Button type="submit" onClick={() => handleRoutes('/courses')}>Add course</Button>
+        <h2 className="text-center page-title mb-4 text-uppercase">Add course</h2>
+        <div className="px-4 py-3 form-border text-white">
+          <Form.Label>Add course title</Form.Label>
+          <Form.Control onChange={onTitleChange} type="text" className="mb-3" required />
+          <Form.Label>Add course description</Form.Label>
+          <Form.Control onChange={onDescriptionChange} type="text" className="mb-3" required />
+          <Form.Label>Add image</Form.Label>
+          <Form.Control onChange={onImageChange} type="file" accept="image/*" className="mb-3" required />
+          <Form.Label>Add instructor name</Form.Label>
+          <Form.Control onChange={onInstructorChange} type="text" className="mb-3" required />
+          <div className="text-right"><Button type="submit" onClick={() => handleRoutes('/courses')} className="button">Add course</Button></div>
+        </div>
       </Form>
     </div>
   );

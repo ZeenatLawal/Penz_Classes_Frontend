@@ -32,7 +32,7 @@ li {
 }
 
 .title,
-.details-title {
+.page-title {
   color: var(--green) !important;
 }
 
@@ -64,6 +64,10 @@ li {
   width: 75%;
 }
 
+.auth-btn {
+  background: var(--green);
+}
+
 .list-group .list-group-item:nth-child(odd) {
   background: var(--green);
 }
@@ -74,6 +78,10 @@ li {
 
 .details-reserve-btn {
   margin-top: 129px;
+}
+
+.form-border {
+  background: var(--green);;
 }
 
 @media only screen and (min-width: 768px) {
