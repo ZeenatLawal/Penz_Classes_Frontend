@@ -13,6 +13,7 @@ export const fetchCoursesSucceed = () => async (dispatch) => {
     username: reservation.username,
     course_id: reservation.course_id,
     course: reservation.course,
+    image: reservation.image,
     start_date: reservation.start_date,
   }));
 
