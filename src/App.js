@@ -11,6 +11,7 @@ import SignUp from './pages/SignUp';
 import ReserveForm from './pages/ReserveForm';
 import DeleteCourse from './pages/DeleteCourse';
 import MyReservations from './pages/MyReservations';
+import Courseform from './pages/Courseform';
 import { checkAutoLogin } from './redux/users/actions/AuthAction';
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/myreservations" element={<MyReservations />} />
           <Route path="/reserve" element={<ReserveForm />} />
+          <Route path="/create-course" element={<Courseform />} />
           <Route path="/delete-courses" element={<DeleteCourse />} />
         </Routes>
       </Router>

@@ -6,6 +6,18 @@ const getCourses = async () => {
   return result;
 };
 
+const addCourse = async (course) => {
+  const response = await fetch('http://localhost:3000/api/v1/courses', {
+    method: 'POST',
+    credentials: 'same-origin',
+    headers: {
+      accepts: 'application/json',
+    },
+    body: course,
+  });
+  return response.json();
+};
+
 const fetchReserveCourses = async () => {
   const url = 'http://localhost:3000/api/v1/reservations';
   const response = await fetch(url);
@@ -49,5 +61,5 @@ const deleteCourse = async (courseId) => {
 };
 
 export {
-  getCourses, reserveCourse, fetchReserveCourses, deleteCourse,
+  getCourses, reserveCourse, fetchReserveCourses, deleteCourse, addCourse,
 };
