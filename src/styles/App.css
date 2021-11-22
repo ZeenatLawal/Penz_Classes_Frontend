@@ -92,6 +92,25 @@ li {
   border: none;
 }
 
+.reserve-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+  padding-top: 50px;
+  width: 90%;
+  color: white;
+  font-weight: bolder;
+}
+.color-reserve {
+  background-color: #98c349;
+  width: 150px;
+  height: 150px;
+}
+.reserve-img {
+  width: 150px;
+  height: 150px;
+}
 @media only screen and (min-width: 768px) {
   .App {
     height: 100vh;
