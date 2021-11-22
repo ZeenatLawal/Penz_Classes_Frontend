@@ -32,7 +32,7 @@ li {
 }
 
 .title,
-.details-title {
+.page-title {
   color: var(--green) !important;
 }
 
@@ -64,6 +64,10 @@ li {
   width: 75%;
 }
 
+.auth-btn {
+  background: var(--green);
+}
+
 .list-group .list-group-item:nth-child(odd) {
   background: var(--green);
 }
@@ -83,6 +87,18 @@ img {
 
 hr {
   border: 1px dashed black;
+}
+
+.form-border {
+  background: #fff;
+  color: var(--green);
+}
+
+.form-border .btn,
+.landing-page .btn {
+  background: var(--green) !important;
+  color: var(--green);
+  border: none;
 }
 
 @media only screen and (min-width: 768px) {

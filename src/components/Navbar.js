@@ -23,11 +23,7 @@ const Navpanel = () => {
             {userInfo.isLoggedIn ? (
               <div>
                 <ul>
-                  <li>
-                    <NavLink to="/" className="title text-uppercase">
-                      {userInfo.user.username}
-                    </NavLink>
-                  </li>
+                  <li className="title text-uppercase">{userInfo.user.username}</li>
                   <li><NavLink activeclassname="active" to="/courses">Courses</NavLink></li>
                   <li><NavLink activeclassname="active" to="/reserve">Reserve Form</NavLink></li>
                   <li><NavLink activeclassname="active" to="/myreservations">My Reservations</NavLink></li>
