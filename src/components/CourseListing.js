@@ -1,7 +1,9 @@
 /* eslint-disable */
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { loadCourses } from '../redux/courses/Courses'
+// import Carousel from 'react-bootstrap/Carousel';
+// import { CardGroup } from 'react-bootstrap';
+import { loadCourses } from '../redux/courses/Courses';
 import CourseComponent from './CourseComponent';
 
 const CourseListing = () => {

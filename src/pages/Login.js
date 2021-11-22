@@ -31,9 +31,9 @@ const Login = () => {
 
   return (
     <div className="m-auto">
-      <h3>LOGIN</h3>
+      <h3 className="text-center">LOGIN</h3>
       <form onSubmit={(e) => handleSubmit(e)}>
-        <div className="col-auto border p-4">
+        <div className="col-auto bg-white border p-4">
           <div className="input-group mb-2">
             <div className="input-group-prepend">
               <div className="input-group-text">@</div>

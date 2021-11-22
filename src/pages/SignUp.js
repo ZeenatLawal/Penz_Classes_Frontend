@@ -19,9 +19,9 @@ const SignUp = () => {
   };
   return (
     <div className="m-auto">
-      <h2>Sign Up</h2>
+      <h2 className="text-center">Sign Up</h2>
       <form onSubmit={(e) => handleSubmit(e)}>
-        <div className="col-auto border p-4">
+        <div className="col-auto bg-white border p-4">
           <div className="input-group mb-2">
             <div className="input-group-prepend">
               <div className="input-group-text">@</div>
