@@ -1,10 +1,9 @@
 /* eslint-disable */
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import Carousel from 'react-bootstrap/Carousel';
-import { CardGroup } from 'react-bootstrap';
-import { loadCourses } from '../redux/courses/Courses';
-import CourseComponent from './CourseComponent';
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { loadCourses } from "../redux/courses/Courses";
+import CourseComponent from "./CourseComponent";
+import { Carousel } from "react-bootstrap";
 
 const CourseListing = () => {
   const courses = useSelector((state) => state.coursesReducer.courses);
@@ -16,15 +15,25 @@ const CourseListing = () => {
   }, [dispatch]);
   return (
     <div className="container">
-      <div className="align-middle">
-      {courses && courses.map((course) => (
-            <CourseComponent
-              key={course.id}
-              course={course}
-            />
+        {courses && courses.map((course) => (
+          <Carousel variant="dark">
+            <Carousel.Item className="d-flex w-100">
+              <CourseComponent
+                key={course.id}
+                course={course}
+              />
+              <CourseComponent
+                key={course.id}
+                course={course}
+              />
+              <CourseComponent
+                key={course.id}
+                course={course}
+              />
+            </Carousel.Item>
+          </Carousel>
           ))}
-      </div>
-    // </div>
+    </div>
   );
 };
 

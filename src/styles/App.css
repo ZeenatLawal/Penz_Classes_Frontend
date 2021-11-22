@@ -76,6 +76,15 @@ li {
   margin-top: 129px;
 }
 
+img {
+  height: 50%;
+  border-radius: 50%;
+}
+
+hr {
+  border: 1px dashed black;
+}
+
 @media only screen and (min-width: 768px) {
   .App {
     height: 100vh;
