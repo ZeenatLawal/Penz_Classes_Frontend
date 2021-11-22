@@ -1,5 +1,7 @@
 import './styles/App.css';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import Navpanel from './components/Navbar';
 import CourseListing from './components/CourseListing';
 import CourseDetails from './components/CourseDetails';
@@ -9,8 +11,15 @@ import SignUp from './pages/SignUp';
 import ReserveForm from './pages/ReserveForm';
 import DeleteCourse from './pages/DeleteCourse';
 import MyReservations from './pages/MyReservations';
+import { checkAutoLogin } from './redux/users/actions/AuthAction';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    checkAutoLogin(dispatch);
+  }, [dispatch, checkAutoLogin]);
+
   return (
     <div className="d-flex flex-md-row flex-column App">
       <Router>

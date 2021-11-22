@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button, Modal, Form } from 'react-bootstrap';
+import {
+  Button, Modal, Form, ListGroup, Row, Col, Container,
+} from 'react-bootstrap';
 import { selectedCourse } from '../redux/courses/Courses';
 import { reserve } from '../redux/reservations/Reservations';
 
@@ -39,19 +41,32 @@ const CourseDetails = () => {
   }, [courseId]);
 
   return (
-    <div className="container">
-      <div key={id}>
-        <div><img src={image} alt="" /></div>
-        <div>{title}</div>
-        <div>{instructorName}</div>
-      </div>
-      <Button className="button" type="button" onClick={() => setSmShow(true)}>Reserve</Button>
-      <Modal
-        size="sm"
-        show={smShow}
-        onHide={() => setSmShow(false)}
-        aria-labelledby="example-modal-sizes-title-sm"
-      >
+    <Container className="details-page">
+      <Row className="h-100" key={id}>
+        <Col xs={12} md={8} className="d-flex justify-content-center align-items-center"><img src={image} alt="" className="rounded" /></Col>
+        <Col xs={12} md={4} className="mt-5">
+          <div className="details-title mt-5 fw-bold text-uppercase fs-4 text-right">{title}</div>
+          <p className="font-italic fs-6 text-right mb-4">Reserve Now!!!</p>
+          <ListGroup>
+            <ListGroup.Item className="d-flex justify-content-between align-items-start">
+              <div className="ms-2 me-auto fw-bold">Course Code:</div>
+              <div>{`${id}001`}</div>
+            </ListGroup.Item>
+            <ListGroup.Item className="d-flex justify-content-between align-items-start">
+              <div className="ms-2 me-auto fw-bold">Instructor:</div>
+              <div>{instructorName}</div>
+            </ListGroup.Item>
+            <ListGroup.Item className="d-flex justify-content-between align-items-start">
+              <div className="ms-2 me-auto fw-bold">Status:</div>
+              <div>Available on reservation</div>
+            </ListGroup.Item>
+          </ListGroup>
+          <div className="text-right">
+            <Button className="button details-reserve-btn rounded-pill" type="button" onClick={() => setSmShow(true)}>Reserve</Button>
+          </div>
+        </Col>
+      </Row>
+      <Modal size="sm" show={smShow} onHide={() => setSmShow(false)} aria-labelledby="example-modal-sizes-title-sm">
         <Modal.Header closeButton>
           <Modal.Title id="example-modal-sizes-title-sm">
             Select a start date
@@ -64,7 +79,7 @@ const CourseDetails = () => {
           </Form>
         </Modal.Body>
       </Modal>
-    </div>
+    </Container>
   );
 };
 

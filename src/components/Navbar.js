@@ -8,7 +8,7 @@ import NavbarFooter from './NavbarFooter';
 import { LogoutAuthAction } from '../redux/users/actions/AuthAction';
 
 const Navpanel = () => {
-  const userLogoutInfo = useSelector((state) => state.authReducer);
+  const userInfo = useSelector((state) => state.authReducer);
   const dispatch = useDispatch();
   const handleChange = () => {
     dispatch(LogoutAuthAction());
@@ -20,9 +20,14 @@ const Navpanel = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav" className="flex-column">
           <Nav className="me-auto align-items-center mb-md-5">
-            {userLogoutInfo.isLoggedIn ? (
+            {userInfo.isLoggedIn ? (
               <div>
                 <ul>
+                  <li>
+                    <NavLink to="/" className="title text-uppercase">
+                      {userInfo.user.username}
+                    </NavLink>
+                  </li>
                   <li><NavLink activeclassname="active" to="/courses">Courses</NavLink></li>
                   <li><NavLink activeclassname="active" to="/reserve">Reserve Form</NavLink></li>
                   <li><NavLink activeclassname="active" to="/myreservations">My Reservations</NavLink></li>
