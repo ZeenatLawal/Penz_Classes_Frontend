@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Container } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchCoursesSucceed } from '../redux/reservations/Reservations';
 
@@ -16,30 +17,24 @@ const MyReservations = () => {
     myReservations = reservations.filter((reservation) => reservation.username === user);
   }
   return (
-    <div>
-      <div>
+    <Container className="main-reserve-wrapper">
+      <div className="reserve-wrapper">
         {myReservations && myReservations.map((reservation) => (
-          <div key={reservation.id}>
-            <p>
-              {' '}
-              {reservation.username}
-              {' '}
-              {reservation.course}
-              {' '}
-              {reservation.course_id}
-              {' '}
+          <div className="d-flex" key={reservation.id}>
+            <div>
+              <img className="reserve-img" src={reservation.image} alt="img" />
+            </div>
+            <div className="color-reserve pt-5 text-center">
+              <h6>{reservation.course}</h6>
               start by
-              {' '}
-              {reservation.start_date}
-              {' '}
-            </p>
-            <img src={reservation.image} alt="img" />
+              <h6>{reservation.start_date}</h6>
+            </div>
           </div>
         ))}
       </div>
       {(!myReservations || !myReservations[0]) && (
-      <h5>No reservations yet!</h5>)}
-    </div>
+        <h5>No reservations yet!</h5>)}
+    </Container>
   );
 };
 
