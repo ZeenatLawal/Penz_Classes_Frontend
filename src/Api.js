@@ -47,6 +47,7 @@ const deleteCourse = async (courseId) => {
   const result = await request.json();
   return result;
 };
+
 export {
   getCourses, reserveCourse, fetchReserveCourses, deleteCourse,
 };
