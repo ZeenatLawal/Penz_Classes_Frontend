@@ -122,15 +122,18 @@ hr {
   color: white;
   font-weight: bolder;
 }
+
 .color-reserve {
   background-color: #98c349;
   width: 150px;
   height: 150px;
 }
+
 .reserve-img {
   width: 150px;
   height: 150px;
 }
+
 @media only screen and (min-width: 768px) {
   .App {
     height: 100vh;

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/App.css';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -13,6 +14,11 @@ const ReserveForm = () => {
   const [courseId, setCourse] = useState(0);
   const [validated, setValidated] = useState(false);
   const user = useSelector((state) => state.authReducer.user.user_id);
+  const navigate = useNavigate();
+
+  const handleRoutes = (path) => {
+    navigate(path);
+  };
 
   const onDateChange = (e) => setDate((e.target.value));
   const onCourseChange = (value) => setCourse(value);
@@ -32,6 +38,7 @@ const ReserveForm = () => {
     setValidated(true);
     setDate();
     setCourse(0);
+    handleRoutes('/myreservations');
   };
 
   return (
