@@ -80,6 +80,26 @@ li {
   margin-top: 129px;
 }
 
+img {
+  margin-right: auto;
+  margin-left: auto;
+  height: 250px;
+  width: 100%;
+  border-radius: 20%;
+}
+
+hr {
+  border: 1px dashed black;
+}
+
+.popularCoursesHeading {
+  color: gray;
+}
+
+.description {
+  color: grey;
+}
+
 .form-border {
   background: #fff;
   color: var(--green);
