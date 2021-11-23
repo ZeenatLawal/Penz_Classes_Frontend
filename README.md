@@ -3,6 +3,8 @@
 
 The app consumes an API created using the Ruby on Rails framework. Link to API repo [PENZ Classes Backend](https://github.com/enkog/Penz_Classes_Backend).
 
+## Screenshot
+![Penz_Classes](https://user-images.githubusercontent.com/26796167/143007998-1d91dd51-cad4-4f57-b1c9-c3eb7b2156f4.PNG)
 ## Project Requirements
 
 - You should follow the layout of [the provided design](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign). You should change only the titles, descriptions, and photos - in order to create a website about something other than motorcycles.
