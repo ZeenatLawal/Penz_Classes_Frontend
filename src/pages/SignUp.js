@@ -19,12 +19,12 @@ const SignUp = () => {
   };
   return (
     <div className="m-auto">
-      <h2 className="text-center">Sign Up</h2>
+      <h3 className="text-center text-uppercase page-title mb-4">Sign Up</h3>
       <form onSubmit={(e) => handleSubmit(e)}>
-        <div className="col-auto bg-white border p-4">
+        <div className="col-auto bg-white border p-4 rounded-top">
           <div className="input-group mb-2">
             <div className="input-group-prepend">
-              <div className="input-group-text">@</div>
+              <div className="input-group-text auth-btn">@</div>
             </div>
             <input
               type="text"
@@ -38,7 +38,7 @@ const SignUp = () => {
             />
           </div>
         </div>
-        <button type="submit" className="btn btn-lg btn-secondary rounded-0 w-100">
+        <button type="submit" className="btn btn-lg auth-btn rounded-0 w-100">
           Sign Up
         </button>
         {!userInfo.isLoggedIn ? (
