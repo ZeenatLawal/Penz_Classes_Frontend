@@ -41,6 +41,7 @@ const Courseform = () => {
     setDescription('');
     setImage('');
     setInstructor('');
+    handleRoutes('/courses');
   };
 
   return (
@@ -56,7 +57,7 @@ const Courseform = () => {
           <Form.Control onChange={onImageChange} type="file" accept="image/*" className="mb-3" required />
           <Form.Label>Add instructor name</Form.Label>
           <Form.Control onChange={onInstructorChange} type="text" className="mb-3" required />
-          <div className="text-right"><Button type="submit" onClick={() => handleRoutes('/courses')} className="btn btn-lg text-white">Add course</Button></div>
+          <div className="text-right"><Button type="submit" className="btn btn-lg text-white">Add course</Button></div>
         </div>
       </Form>
     </div>
