@@ -77,12 +77,23 @@ li {
 }
 
 img {
-  height: 50%;
-  border-radius: 50%;
+  margin-right: auto;
+  margin-left: auto;
+  height: 250px;
+  width: 100%;
+  border-radius: 20%;
 }
 
 hr {
   border: 1px dashed black;
+}
+
+.popularCoursesHeading {
+  color: gray;
+}
+
+.description {
+  color: grey;
 }
 
 @media only screen and (min-width: 768px) {

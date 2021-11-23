@@ -19,7 +19,7 @@ const CourseListing = () => {
     dispatch(loadCourses());
   }, [dispatch]);
   return (
-    <>
+    <>  
         <Carousel breakPoints={breakPoints}>
           {courses && courses.map((course) => (
                 <CourseComponent
