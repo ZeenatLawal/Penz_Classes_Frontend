@@ -18,16 +18,24 @@ const CourseListing = () => {
     dispatch(loadCourses());
   }, [dispatch]);
   return (
-    <>
-      <Carousel breakPoints={breakPoints}>
-        {courses && courses.map((course) => (
-          <CourseComponent
-            key={course.id}
-            course={course}
-          />
-        ))}
-      </Carousel>
-    </>
+    <div className="container-fluid">
+      <div className="align-middle">
+        <h3 className="d-flex justify-content-center">Popular courses</h3>
+        <h5 className="description d-flex justify-content-center">
+          {' '}
+          Select favorite course
+          {' '}
+        </h5>
+        <Carousel breakPoints={breakPoints}>
+          {courses && courses.map((course) => (
+            <CourseComponent
+              key={course.id}
+              course={course}
+            />
+          ))}
+        </Carousel>
+      </div>
+    </div>
   );
 };
 

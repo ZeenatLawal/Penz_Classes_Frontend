@@ -5,17 +5,17 @@ import { Link } from 'react-router-dom';
 
 const CourseComponent = ({ course }) => (
   <div key={course.id}>
-    <div className="d-flex pt-5">
+    <div className="d-flex">
       <div className="d-flex flex-column p-2">
         <Link to={`/courses/${course.id}`}>
           {' '}
-          <img src={course.image} alt="course slides" />
+          <img src={course.image} alt="course photos" />
           {' '}
         </Link>
         <hr className="w-50 mx-auto" />
-        <h5 className="text-center">{course.title}</h5>
-        <p className="w-100 text-break description">{course.description}</p>
-        <div className="d-flex p-3 justify-content-evenly">
+        <h6 className="text-center">{course.title}</h6>
+        <small className="text-break description">{course.description}</small>
+        <div className="d-flex p-3 justify-content-evenly social">
           <FaFacebook />
           <FaTwitter />
           <FaInstagram />

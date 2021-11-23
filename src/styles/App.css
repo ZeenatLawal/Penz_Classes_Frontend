@@ -83,7 +83,7 @@ li {
 img {
   margin-right: auto;
   margin-left: auto;
-  height: 250px;
+  height: 200px;
   width: 100%;
   border-radius: 20%;
 }
@@ -96,7 +96,8 @@ hr {
   color: gray;
 }
 
-.description {
+.description,
+.social {
   color: grey;
 }
 
@@ -123,5 +124,18 @@ hr {
 
   .form-width {
     width: 40%;
+  }
+
+  .head-title {
+    position: fixed;
+    margin-left: 650px;
+    text-align: center;
+  }
+
+  .head-text {
+    position: fixed;
+    margin-left: 685px;
+    text-align: center;
+    color: gray;
   }
 }
