@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+:root {
+  --green: #97bf0f;
+  --light-green: #e6f1c2;
+}
+
+*,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  padding-bottom: 20px;
+}
+
+.App {
+  background-color: var(--light-green);
+  min-height: 100vh;
+}
+
+.title,
+.page-title {
+  color: var(--green) !important;
+}
+
+.title,
+.copy {
+  font-family: 'Kaushan Script', cursive;
+}
+
+.active {
+  background-color: var(--green);
+  color: white;
+  padding: 10px 30px 10px 20px;
+}
+
+.copy {
+  font-size: 10px;
+}
+
+.button,
+.button:hover {
+  background-color: white;
+  color: var(--green);
+  border-color: var(--green);
+  padding: 10px 40px;
+  font-weight: bold;
+}
+
+.form-width {
+  width: 75%;
+}
+
+.auth-btn {
+  background: var(--green);
+}
+
+.list-group .list-group-item:nth-child(odd) {
+  background: var(--green);
+}
+
+.list-group .list-group-item:nth-child(even) {
+  background: var(--light-green);
+}
+
+.details-reserve-btn {
+  margin-top: 129px;
+}
+
+.img {
+  margin-right: auto;
+  margin-left: auto;
+  height: 200px;
+  width: 100%;
+  border-radius: 20%;
+}
+
+.details-img {
+  width: 300px;
+}
+
+hr {
+  border: 1px dashed black;
+}
+
+.popularCoursesHeading {
+  color: gray;
+}
+
+.description,
+.social {
+  color: grey;
+}
+
+.form-border {
+  background: #fff;
+  color: var(--green);
+}
+
+.form-border .btn,
+.landing-page .btn {
+  background: var(--green) !important;
+  color: var(--green);
+  border: none;
+}
+
+.reserve-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+  padding-top: 50px;
+  width: 90%;
+  color: white;
+  font-weight: bolder;
+}
+
+.color-reserve {
+  background-color: #98c349;
+  width: 150px;
+  height: 150px;
+}
+
+.reserve-img {
+  width: 150px;
+  height: 150px;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer {
+    padding-top: 100px;
+  }
+
+  .form-width {
+    width: 40%;
+  }
+}

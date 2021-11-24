@@ -1,70 +1,116 @@
-# Getting Started with Create React App
+# PENZ Classes Frontend
+> An online class app that allows users to see all available courses, reserve a spot in a class, see all reservations, add and delete courses. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The app consumes an API created using the Ruby on Rails framework. Link to API repo [PENZ Classes Backend](https://github.com/enkog/Penz_Classes_Backend).
 
-## Available Scripts
+## Deployment
 
-In the project directory, you can run:
+[Visit the Website](https://penz-classes.netlify.app/)
 
-### `yarn start`
+## Screenshot
+![Penz_Classes](https://user-images.githubusercontent.com/26796167/143007998-1d91dd51-cad4-4f57-b1c9-c3eb7b2156f4.PNG)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Kanban Board
+- Final number of team members is 4.
+- [Kanban Board link](https://github.com/enkog/Penz_Classes_Backend/projects/1)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![Kanban Board](https://user-images.githubusercontent.com/46851023/141288854-34cb1902-4c16-498a-974f-cabff53309a2.png)
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Requirements
 
-### `yarn build`
+- You should follow the layout of [the provided design](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign). You should change only the titles, descriptions, and photos - in order to create a website about something other than motorcycles.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Select a theme for your website - is it going to be a website for booking doctor appointments, booking online classes, or something else?
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- The user logs in to the website, only by typing the username.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- In the navigation panel, the user can see links to:
 
-### `yarn eject`
+	- Motorcycles/doctors/classes/items that you selected as a theme.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+	- "Reserve" form.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+	- "My reservations".
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+	- "Add motorcycle/doctor/class/item that you selected as a theme" (if you are in a group of 4 people the link is visible to everybody).
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+	- "Delete motorcycle/doctor/class/item that you selected as a theme" (if you are in a group of 4 people the link is visible to everybody).
 
-## Learn More
+- On the main page, the user can see a [list of motorcycles/doctors/classes/items that you selected as a theme](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign/modules/173005577).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- When the user selects a specific item, they can see the [details page](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign/modules/173005579) with its full description (skip the "Rotate image" button).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- In the details page, the user can click the "Reserve" button (in the design you can see the "Configure" button - please replace it with the "Reserve" button).
 
-### Code Splitting
+- When the user clicks the "Add item" link in the navigation panel they can see a form for adding a new item.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Make the app responsive, creating both mobile and desktop versions.
 
-### Analyzing the Bundle Size
+- When the user clicks the "Delete item" link in the navigation panel they can see a list of all items with title and "Delete" button.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- When the user clicks the "Delete" button, the selected item is marked as removed and does not show on the main list anymore.
 
-### Making a Progressive Web App
+- To reserve an appointment, the user has to select a date and city (username and selected item are autofilled).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Use the design based on the ["Book a vespa test-ride"](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign/modules/173005583) and add all necessary inputs.
 
-### Advanced Configuration
+- The user can also access the "Reserve" page from the navigation panel. In that case only username is autofilled.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- When the user clicks the "My reservations" link in the navigation panel they can see a list of their reservations (with information about item name, date and city).
+## Built With
 
-### Deployment
+- ReactJS
+- Redux
+- HTML & CSS
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Getting Started
 
-### `yarn build` fails to minify
+### To get a local copy run the following steps:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Clone the repository with `git clone https://github.com/ZeenatLawal/Penz_Classes_Frontend.git`
+- Open the folder with your code editor
+- Run `npm install --force` to install all dependencies
+- Run `npm start` and go to `http:localhost:3001/` to launch the server.
+
+## Authors
+
+👤 **Zeenat Lawal**
+
+- GitHub: [@ZeenatLawal](https://github.com/ZeenatLawal)
+- Twitter: [@lawal_zeenat](https://twitter.com/lawal_zeenat)
+- LinkedIn: [Zeenat Lawal](https://www.linkedin.com/in/zeenatlawal/)
+
+👤 **Nkiruka**
+
+- Github: [@enkog](https://github.com/enkog)
+- Linkedin: [@enkog](https://www.linkedin.com/in/enkog/)
+- Twitter: [@enkodes](https://twitter.com/enkodes)
+
+👤 **Elyor**
+
+- Github: [@elyor-doniyorov](https://github.com/elyor-doniyorov)
+- LinkedIn: [@elyor-doniyorov](www.linkedin.com/in/elyor-doniyorov)
+- Twitter: [@elyor-doniyorov](https://twitter.com/elyor-doniyorov)
+
+👤 **Priscilla**
+
+- Github [@prolajumokeoni](https://github.com/prolajumokeoni)
+- Twitter [@prolajumokeoni](https://twitter.com/prolajumokeoni)
+- LinkedIn [@olajumoke-priscilla-oni-44a48b162](https://www.linkedin.com/in/olajumoke-priscilla-oni-44a48b162/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/ZeenatLawal/Penz_Classes_Frontend/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Microverse
+- [Murat Korkmaz](https://www.behance.net/muratk) for the Project Design from [Behance](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign)
+- Learning partners, Standup and morning session team
