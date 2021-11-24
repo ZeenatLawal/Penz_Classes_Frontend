@@ -10,8 +10,8 @@ const LandingPage = () => {
 
   return (
     <div className="landing-page d-flex flex-column w-100 justify-content-center align-items-center">
-      <h1 className="page-title text-uppercase mb-5">Welcome to PENZ Classes</h1>
-      <p className="fs-5 mb-2">
+      <h1 className="page-title text-uppercase mb-5 text-center">Welcome to PENZ Classes</h1>
+      <p className="fs-5 mb-2 text-center">
         We are an online school that provides a
         wide range of programming courses, and more.
       </p>

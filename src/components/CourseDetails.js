@@ -43,7 +43,7 @@ const CourseDetails = () => {
   return (
     <Container className="details-page">
       <Row className="h-100" key={id}>
-        <Col xs={12} md={8} className="d-flex justify-content-center align-items-center"><img src={image} alt="" className="rounded" /></Col>
+        <Col xs={12} md={8} className="d-flex justify-content-center align-items-center"><img src={image} alt="" className="rounded details-img" /></Col>
         <Col xs={12} md={4} className="mt-5">
           <div className="page-title mt-5 fw-bold text-uppercase fs-4 text-right">{title}</div>
           <p className="font-italic fs-6 text-right mb-4">Reserve Now!!!</p>

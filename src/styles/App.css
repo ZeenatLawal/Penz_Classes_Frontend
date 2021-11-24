@@ -88,6 +88,10 @@ li {
   border-radius: 20%;
 }
 
+.details-img {
+  width: 300px;
+}
+
 hr {
   border: 1px dashed black;
 }
