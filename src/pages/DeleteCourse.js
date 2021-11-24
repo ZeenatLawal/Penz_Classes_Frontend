@@ -16,7 +16,7 @@ const DeleteCourse = () => {
 
   return (
     <Container className="pt-5">
-      <h2 className="text-center mb-4">Delete Courses</h2>
+      <h2 className="text-center mb-4 page-title">Delete Courses</h2>
       <Table striped bordered>
         <thead>
           <tr>

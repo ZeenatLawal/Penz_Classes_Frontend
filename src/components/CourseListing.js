@@ -20,7 +20,7 @@ const CourseListing = () => {
   return (
     <div className="container-fluid">
       <div className="align-middle">
-        <h3 className="d-flex justify-content-center">Popular courses</h3>
+        <h3 className="d-flex justify-content-center page-title">Popular courses</h3>
         <h5 className="description d-flex justify-content-center">
           {' '}
           Select favorite course

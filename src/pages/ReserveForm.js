@@ -36,7 +36,7 @@ const ReserveForm = () => {
 
   return (
     <Container className="pt-5 text-center d-flex flex-column align-items-center">
-      <h2 className="text-center mb-4">Reserve a spot in one of our courses</h2>
+      <h2 className="text-center mb-4 page-title">Reserve a spot in one of our courses</h2>
       <Form onSubmit={handleSubmit} noValidate validated={validated} className="form-width d-flex flex-column align-items-center">
         <Form.Label>Select a start date for your course</Form.Label>
         <Form.Control type="date" onChange={onDateChange} className="mb-4 rounded-pill" required />
