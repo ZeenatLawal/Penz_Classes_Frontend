@@ -10,6 +10,13 @@ The app consumes an API created using the Ruby on Rails framework. Link to API r
 ## Screenshot
 ![Penz_Classes](https://user-images.githubusercontent.com/26796167/143007998-1d91dd51-cad4-4f57-b1c9-c3eb7b2156f4.PNG)
 
+## Kanban Board
+- Final number of team members is 4.
+- [Kanban Board link](https://github.com/enkog/Penz_Classes_Backend/projects/1)
+
+![Kanban Board](https://user-images.githubusercontent.com/46851023/141288854-34cb1902-4c16-498a-974f-cabff53309a2.png)
+
+
 ## Project Requirements
 
 - You should follow the layout of [the provided design](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign). You should change only the titles, descriptions, and photos - in order to create a website about something other than motorcycles.
