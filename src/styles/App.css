@@ -28,6 +28,7 @@ li {
 
 .App {
   background-color: var(--light-green);
+  min-height: 100vh;
 }
 
 .title,

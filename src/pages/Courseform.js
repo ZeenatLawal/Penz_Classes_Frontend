@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { useNavigate } from 'react-router-dom';
 import { addNewCourses } from '../redux/courses/Courses';
 
 const Courseform = () => {
@@ -12,11 +11,6 @@ const Courseform = () => {
   const [image, setImage] = useState('');
   const [instructor, setInstructor] = useState('');
   const [validated, setValidated] = useState(false);
-  const navigate = useNavigate();
-
-  const handleRoutes = (path) => {
-    navigate(path);
-  };
 
   const onTitleChange = (e) => setTitle(e.target.value);
   const onDescriptionChange = (e) => setDescription(e.target.value);
@@ -41,7 +35,6 @@ const Courseform = () => {
     setDescription('');
     setImage('');
     setInstructor('');
-    handleRoutes('/courses');
   };
 
   return (
