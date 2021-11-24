@@ -27,7 +27,6 @@ li {
 }
 
 .App {
-  height: 130vh;
   background-color: var(--light-green);
 }
 
@@ -80,7 +79,7 @@ li {
   margin-top: 129px;
 }
 
-img {
+.img {
   margin-right: auto;
   margin-left: auto;
   height: 200px;
@@ -136,28 +135,11 @@ hr {
 }
 
 @media only screen and (min-width: 768px) {
-  .App {
-    height: 100vh;
-  }
-
   .footer {
     padding-top: 100px;
   }
 
   .form-width {
     width: 40%;
-  }
-
-  .head-title {
-    position: fixed;
-    margin-left: 650px;
-    text-align: center;
-  }
-
-  .head-text {
-    position: fixed;
-    margin-left: 685px;
-    text-align: center;
-    color: gray;
   }
 }

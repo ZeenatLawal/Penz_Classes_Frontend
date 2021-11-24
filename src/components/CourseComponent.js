@@ -9,7 +9,7 @@ const CourseComponent = ({ course }) => (
       <div className="d-flex flex-column p-2">
         <Link to={`/courses/${course.id}`}>
           {' '}
-          <img src={course.image} alt="course photos" />
+          <img src={course.image} alt="course photos" className="img" />
           {' '}
         </Link>
         <hr className="w-50 mx-auto" />

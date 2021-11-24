@@ -16,7 +16,7 @@ const DeleteButton = ({ course }) => {
       <td className="col-5">{course.title}</td>
       <td className="col-5">{course.instructor}</td>
       <td>
-        <Button variant="outline-danger" size="sm" onClick={() => remove(course.id)}>Delete Course</Button>
+        <Button variant="outline-danger" size="sm" onClick={() => remove(course.id)}>Delete</Button>
       </td>
     </tr>
   );
