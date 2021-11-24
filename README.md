@@ -58,7 +58,7 @@ The app consumes an API created using the Ruby on Rails framework. Link to API r
 
 - Clone the repository with `git clone https://github.com/ZeenatLawal/Penz_Classes_Frontend.git`
 - Open the folder with your code editor
-- Run `npm install` to install all dependencies
+- Run `npm install --force` to install all dependencies
 - Run `npm start` and go to `http:localhost:3001/` to launch the server.
 
 ## Authors
