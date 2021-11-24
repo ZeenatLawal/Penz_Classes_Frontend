@@ -21,7 +21,7 @@ const CourseDetails = () => {
   } = courses;
 
   const fetchSelectedCourse = async () => {
-    const res = await axios.get(`http://localhost:3000/api/v1/courses/${courseId}`);
+    const res = await axios.get(`https://penz-classes-backend.herokuapp.com/api/v1/courses/${courseId}`);
     dispatch(selectedCourse(res.data));
   };
 

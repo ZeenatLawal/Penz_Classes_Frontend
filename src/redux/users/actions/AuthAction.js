@@ -15,7 +15,7 @@ const saveTokenInLocalStorage = (tokenDetails) => {
 
 export const RegisterAuthAction = (userState) => async (dispatch) => {
   try {
-    const res = await axios.post('http://localhost:3000/api/v1/signup', userState);
+    const res = await axios.post('https://penz-classes-backend.herokuapp.com/api/v1/signup', userState);
     const { data } = res;
     saveTokenInLocalStorage(data);
     dispatch({ type: ActionType.REGISTER_SUCCESS, payload: data });
@@ -31,7 +31,7 @@ export const RegisterAuthAction = (userState) => async (dispatch) => {
 
 export const LoginAuthAction = (loginState) => async (dispatch) => {
   try {
-    const res = await axios.post('http://localhost:3000/api/v1/login', loginState);
+    const res = await axios.post('https://penz-classes-backend.herokuapp.com/api/v1/login', loginState);
     const { data } = res;
     saveTokenInLocalStorage(data);
     dispatch({ type: ActionType.LOGIN_SUCCESS, payload: data });
@@ -47,7 +47,7 @@ export const LoginAuthAction = (loginState) => async (dispatch) => {
 
 export const LogoutAuthAction = (logoutState) => async (dispatch) => {
   try {
-    const res = await axios.delete('http://localhost:3000/api/v1/logout', logoutState);
+    const res = await axios.delete('https://penz-classes-backend.herokuapp.com/api/v1/logout', logoutState);
     const { data } = res;
     localStorage.removeItem('userDetails');
     dispatch({ type: ActionType.LOGOUT_SUCCESS, payload: data });

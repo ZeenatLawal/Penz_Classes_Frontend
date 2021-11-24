@@ -1,4 +1,4 @@
-const url = 'http://localhost:3000/api/v1/courses';
+const url = 'https://penz-classes-backend.herokuapp.com/api/v1/courses';
 
 const getCourses = async () => {
   const request = await fetch(url);
@@ -7,7 +7,7 @@ const getCourses = async () => {
 };
 
 const addCourse = async (course) => {
-  const response = await fetch('http://localhost:3000/api/v1/courses', {
+  const response = await fetch('https://penz-classes-backend.herokuapp.com/api/v1/courses', {
     method: 'POST',
     credentials: 'same-origin',
     headers: {
@@ -19,13 +19,14 @@ const addCourse = async (course) => {
 };
 
 const fetchReserveCourses = async () => {
-  const url = 'http://localhost:3000/api/v1/reservations';
+  const url = 'https://penz-classes-backend.herokuapp.com/api/v1/reservations';
   const response = await fetch(url);
   const result = await response.json();
   return result;
 };
+
 const reserveCourse = async (course) => {
-  const request = await fetch('http://localhost:3000/api/v1/reservations', {
+  const request = await fetch('https://penz-classes-backend.herokuapp.com/api/v1/reservations', {
     method: 'POST',
     credentials: 'same-origin',
     headers: {
